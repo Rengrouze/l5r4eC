@@ -1,23 +1,250 @@
 {
    "Actor": {
-      "types": ["hero", "pawn", "villain"],
+      "types": ["pc", "npc"],
       "templates": {
-         "background": {
-            "biography": "",
-            "hairColor": "blue"
-         },
-         "resources": {
-            "health": {
-               "min": 0,
-               "value": 10,
-               "max": 10
+         "common": {
+            "traits": {
+               "stamina": 2,
+               "willpower": 2,
+               "strength": 2,
+               "perception": 2,
+               "reflexes": 2,
+               "awareness": 2,
+               "agility": 2,
+               "intelligence": 2
             },
-            "power": {
-               "min": 0,
-               "value": 1,
-               "max": 3
-            }
+            "rings": {
+               "fire": 2,
+               "air": 2,
+               "water": 2,
+               "earth": 2,
+               "void": 2
+            },
+            "wounds": {
+               "value": 0,
+               "max": 20,
+               "mod": 0,
+               "heal_rate": 0
+            },
+            "suffered": 0,
+            "wound_lvl": {
+               "healthy": {
+                  "value": 0,
+                  "penalty": 0,
+                  "current": true
+               },
+               "nicked": {
+                  "value": 0,
+                  "penalty": 3,
+                  "current": false
+               },
+               "grazed": {
+                  "value": 0,
+                  "penalty": 5,
+                  "current": false
+               },
+               "hurt": {
+                  "value": 0,
+                  "penalty": 10,
+                  "current": false
+               },
+               "injured": {
+                  "value": 0,
+                  "penalty": 15,
+                  "current": false
+               },
+               "crippled": {
+                  "value": 0,
+                  "penalty": 20,
+                  "current": false
+               },
+               "down": {
+                  "value": 0,
+                  "penalty": 40,
+                  "current": false
+               },
+               "out": {
+                  "value": 0,
+                  "penalty": 40,
+                  "current": false
+               }
+            },
+            "armor": {
+               "armor_tn": 0,
+               "reduction": 0
+            },
+            "notes": ""
          }
+      },
+      "npc": {
+         "templates": ["common"],
+         "initiative": {
+            "roll": 2,
+            "keep": 2
+         },
+         "attack1": {
+            "roll": 2,
+            "keep": 2,
+            "type": ""
+         },
+         "attack2": {
+            "roll": 2,
+            "keep": 2,
+            "type": ""
+         },
+         "damage1": {
+            "roll": 2,
+            "keep": 2,
+            "type": ""
+         },
+         "damage2": {
+            "roll": 2,
+            "keep": 2,
+            "type": ""
+         },
+         "nrWoundLvls": 1
+      },
+      "pc": {
+         "templates": ["common"],
+         "void_points": {
+            "capped": "yes",
+            "max": 2,
+            "spend": 0
+         },
+
+         "xp": 0,
+         "clan": "",
+         "school": "",
+         "honor": {
+            "rank": 2,
+            "points": 0
+         },
+         "glory": {
+            "rank": 1,
+            "points": 0
+         },
+         "status": {
+            "rank": 1,
+            "points": 0
+         },
+         "shadow_taint": {
+            "rank": 0,
+            "points": 0
+         },
+         "initiative": {
+            "roll": 2,
+            "keep": 2,
+            "roll_mod": 0,
+            "keep_mod": 0,
+            "total_mod": 0
+         },
+         "insight": {
+            "rank": 1,
+            "points": 0
+         },
+         "armor_tn": {
+            "type": "",
+            "reduction": 0,
+            "current": 0,
+            "mod": 0
+         },
+         "woundsMod": 0,
+         "wealth": {
+            "koku": 0,
+            "bu": 0,
+            "zeni": 0
+         },
+         "spellSlots": {
+            "water": 2,
+            "fire": 2,
+            "earth": 2,
+            "air": 2,
+            "void": 2
+         }
+      }
+   },
+   "Item": {
+      "types": ["advantage", "disadvantage", "skill", "commonItem", "weapon", "bow", "armor", "technique", "spell", "kata", "kiho"],
+      "templates": {
+         "itemDescription": {
+            "description": ""
+         }
+      },
+      "commonItem": {
+         "templates": ["itemDescription"]
+      },
+      "weapon": {
+         "templates": ["itemDescription"],
+         "damageRoll": 0,
+         "damageKeep": 0,
+         "size": "Medium",
+         "damageFormula": ""
+      },
+      "bow": {
+         "templates": ["itemDescription"],
+         "str": 1,
+         "size": "Large",
+         "range": 100,
+         "arrow": "willow",
+         "damageRoll": 0,
+         "damageKeep": 0
+      },
+      "armor": {
+         "templates": ["itemDescription"],
+         "bonus": 0,
+         "reduction": 0,
+         "specialRues": "",
+         "equiped": false
+      },
+      "spell": {
+         "templates": ["itemDescription"],
+         "ring": "earth",
+         "mastery": 1,
+         "keywords": [],
+         "range": "",
+         "aoe": "",
+         "duration": "",
+         "raises": ""
+      },
+      "technique": {
+         "templates": ["itemDescription"],
+         "rank": 1,
+         "shugenja": false,
+         "affinity": "",
+         "deficiency": ""
+      },
+      "skill": {
+         "templates": ["itemDescription"],
+         "rank": 0,
+         "type": "high",
+         "trait": "void",
+         "emphasis": "",
+         "mastery_3": "",
+         "mastery_5": "",
+         "mastery_7": "",
+         "insight_bonus": 0,
+         "school": false
+      },
+      "advantage": {
+         "templates": ["itemDescription"],
+         "cost": 0,
+         "type": "physical"
+      },
+      "disadvantage": {
+         "templates": ["itemDescription"],
+         "cost": 0,
+         "type": "physical"
+      },
+      "kata": {
+         "templates": ["itemDescription"],
+         "ring": "earth",
+         "mastery": 1
+      },
+      "kiho": {
+         "templates": ["itemDescription"],
+         "ring": "earth",
+         "mastery": 1,
+         "type": "internal"
       }
    }
 }
