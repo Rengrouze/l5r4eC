@@ -3,7 +3,6 @@
    "title": "La légende des 5 anneaux Cyrus Edition",
    "description": "L5R 4ème édition, modifiée pour Cyrus par un de ses joueurs",
    "version": "0.0.1",
-   "url": "https://github.com/Rengrouze/l5r4eC.git",
    "compatibily": {
       "minimum": "10",
       "verified": "11",
@@ -16,5 +15,19 @@
          "email": "eoumghar@gmail.com",
          "discord": "rengret"
       }
-   ]
+   ],
+   "scripts": ["scripts/system-script.js"],
+   "styles": ["styles/system-styles.css"],
+   "languages": [
+      {
+         "lang": "fr",
+         "name": "Français",
+         "path": "lang/fr.json"
+      }
+   ],
+   "socket": "true",
+   "background": "systems/l5r4ec/assets/splash.jpg",
+   "url": "https://github.com/Rengrouze/l5r4eC.git",
+   "manifest": "https://github.com/Rengrouze/l5r4eC/blob/94f37d10efa84dd25b1db4788c7fcd8c09f01165/system.json",
+   "download": "https://github.com/Rengrouze/l5r4eC.git"
 }
