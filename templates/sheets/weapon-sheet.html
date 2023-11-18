@@ -1,7 +1,31 @@
 <form class="{{cssClass}}" autocomplete="off">
    <header class="sheet-header">
-      <img src="{{item.img}}" data-edit="img" title="item.name" height="64" width="64" />
+      <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
       <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
    </header>
-   <p>test du paragraphe bande de batard</p>
+   <div>
+      <table>
+         <tr>
+            <th>{{localize "l5r4ec.weapon.attackTypes"}}</th>
+            <th>{{localize "l5r4ec.weapon.damageRoll"}}</th>
+            <th>{{localize "l5r4ec.weapon.damageKeep"}}</th>
+         </tr>
+         <tr>
+            <td>
+               <select name="data.attackTypes">
+                  {{#select data.attackTypes}} {{#each config.attackTypes as |name type|}}
+                  <option value="{{type}}">{{name}}</option>
+                  {{/each}} {{/select}}
+               </select>
+            </td>
+            <td>
+               <input name="data.damageRoll" type="text" value="{{data.damageRoll}}" data-dtype="Number" />
+            </td>
+            <td>
+               <input name="data.damageKeep" type="text" value="{{data.damageKeep}}" data-dtype="Number" />
+            </td>
+         </tr>
+      </table>
+      <textarea name="data.description">{{data.description}}</textarea>
+   </div>
 </form>

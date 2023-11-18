@@ -177,8 +177,7 @@
          "templates": ["itemDescription"],
          "damageRoll": 0,
          "damageKeep": 0,
-         "size": "Medium",
-         "damageFormula": ""
+         "attackTypes": ["jiujitsu", "kenjustu"]
       },
       "bow": {
          "templates": ["itemDescription"],
