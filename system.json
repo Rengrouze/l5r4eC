@@ -1,6 +1,20 @@
 {
    "id": "l5r4ec",
-   "title": "Minimal World Building",
-   "description": "A human-readable description of your system.",
-   "version": "1.0.0"
+   "title": "La légende des 5 anneaux Cyrus Edition",
+   "description": "L5R 4ème édition, modifiée pour Cyrus par un de ses joueurs",
+   "version": "0.0.1",
+   "url": "https://github.com/Rengrouze/l5r4eC.git",
+   "compatibily": {
+      "minimum": "10",
+      "verified": "11",
+      "maximum": "11"
+   },
+   "authors": [
+      {
+         "name": "Kakita Hirohiko (Elias Oumghar)",
+         "url": "https://github.com/Rengrouze",
+         "email": "eoumghar@gmail.com",
+         "discord": "rengret"
+      }
+   ]
 }
