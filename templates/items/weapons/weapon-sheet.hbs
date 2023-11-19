@@ -1,0 +1,48 @@
+<form class="{{cssClass}}" autocomplete="off">
+   <header class="sheet-header">
+      <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
+      <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
+   </header>
+   <div>
+      <table>
+         <tr>
+            <th>{{localize "l5r4ec.weapon.skillUsed"}}</th>
+            <th>{{localize "l5r4ec.weapon.damageRoll"}}</th>
+            <th>{{localize "l5r4ec.weapon.damageKeep"}}</th>
+         </tr>
+         <tr>
+            <td>
+              <select name="data.skill">
+                  {{#each data.skills as |id cat|}}
+                     <option value="{{id}}" {{#if (eq id ../data.skill)}}selected{{/if}}>{{localizeSkillId id}}</option>
+                  {{/each}}
+               </select>
+
+            </td>
+            <td>
+               <input
+                  class="select-on-focus"
+                  type="number"
+                  name="data.damageRoll"
+                  value="{{data.damageRoll}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+            <td>
+               <input
+                  class="select-on-focus"
+                  type="number"
+                  name="data.damageKeep"
+                  value="{{data.damageKeep}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+         </tr>
+      </table>
+      <textarea name="data.description">{{data.description}}</textarea>
+   </div>
+</form>

@@ -1,8 +1,16 @@
 {
-   "lRr4ec": {
-      "attackTypes": {
-         "jiujitsu": "Jiujistu",
-         "kenjustu": "Kenjustu"
+   "l5r4ec": {
+      "weapon": {
+         "skillUsed": "Compétence utilisée",
+         "damageRoll": "Dés lancés",
+         "damageKeep": "Dés gardés"
+      },
+      "skills": {
+         "weaponSkill": {
+            "kenjutsu": "Kenjutsu",
+            "jiujitsu": "Jiujitsu",
+            "heavy-weapons": "Armes lourdes"
+         }
       }
    }
 }
