@@ -9,6 +9,17 @@
       "maximum": "11"
    },
    "esmodules": ["l5r4ec.js"],
+   "packs": [
+      {
+         "name": "items",
+         "label": "Items (L5R4E)",
+         "system": "l5r4ec",
+         "path": "packs/items.db",
+         "type": "Item",
+         "private": false,
+         "flags": {}
+      }
+   ],
    "authors": [
       {
          "name": "Kakita Hirohiko (Elias Oumghar)",
@@ -17,7 +28,7 @@
          "discord": "rengret"
       }
    ],
-   "scripts": ["scripts/system-script.js"],
+
    "styles": ["styles/system-styles.css"],
    "languages": [
       {

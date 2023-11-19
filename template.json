@@ -20,6 +20,62 @@
                "earth": 2,
                "void": 2
             },
+            "skills": {
+               "high": {
+                  "acting": 0,
+                  "artisan": 0,
+                  "calligraphy": 0,
+                  "courtier": 0,
+                  "divination": 0,
+                  "etiquette": 0,
+                  "games": 0,
+                  "investigation": 0,
+                  "lore": 0,
+                  "medicine": 0,
+                  "meditation": 0,
+                  "perform": 0,
+                  "sincerity": 0,
+                  "spellcraft": 0,
+                  "tea": 0
+               },
+               "bugei": {
+                  "athletics": 0,
+                  "battle": 0,
+                  "defense": 0,
+                  "horsemanship": 0,
+                  "hunting": 0,
+                  "iaijutsu": 0,
+                  "jiujutsu": 0
+               },
+               "weapon": {
+                  "cannon": 0,
+                  "chain": 0,
+                  "firearms": 0,
+                  "heavy": 0,
+                  "kenjutsu": 0,
+                  "knives": 0,
+                  "kyujutsu": 0,
+                  "ninjutsu": 0,
+                  "polearms": 0,
+                  "spears": 0,
+                  "staves": 0,
+                  "warfans": 0
+               },
+               "merchant": {
+                  "animalHandling": 0,
+                  "commerce": 0,
+                  "craft": 0,
+                  "engineering": 0,
+                  "sailing": 0
+               },
+               "low": {
+                  "forgery": 0,
+                  "intimidation": 0,
+                  "sleightOfHand": 0,
+                  "stealth": 0,
+                  "temptation": 0
+               }
+            },
             "wounds": {
                "value": 0,
                "max": 20,
@@ -166,18 +222,23 @@
    "Item": {
       "types": ["advantage", "disadvantage", "skill", "commonItem", "weapon", "bow", "armor", "technique", "spell", "kata", "kiho"],
       "templates": {
-         "itemDescription": {
-            "description": ""
+         "basics": {
+            "description": "",
+            "items": []
+         },
+         "items": {
+            "equipped": false,
+            "quantity": 1
          }
       },
       "commonItem": {
          "templates": ["itemDescription"]
       },
       "weapon": {
-         "templates": ["itemDescription"],
-         "damageRoll": 0,
-         "damageKeep": 0,
-         "attackTypes": ["jiujitsu", "kenjustu"]
+         "templates": ["basics", "items"],
+         "damageRoll": 3,
+         "damageKeep": 2,
+         "skills": ""
       },
       "bow": {
          "templates": ["itemDescription"],
