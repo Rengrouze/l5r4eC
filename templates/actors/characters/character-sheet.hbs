@@ -1,7 +1,110 @@
 <form class="{{cssClass}}" autocomplete="off">
    <header class="sheet-header">
-      <img src="{{data.img}}" data-edit="img" title="{{data.name}}" height="64" width="64" />
-      <h1><input name="name" type="text" value="{{data.name}}" placeholder="Name" /></h1>
+      <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64" />
+      <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
    </header>
-   <div></div>
+   <div>
+      <table>
+         <tr>
+            <th>{{localize "l5r4ec.rings.water"}}</th>
+            <th>{{localize "l5r4ec.rings.earth"}}</th>
+            <th>{{localize "l5r4ec.rings.fire"}}</th>
+            <th>{{localize "l5r4ec.rings.air"}}</th>
+            <th>{{localize "l5r4ec.rings.void"}}</th>
+
+         </tr>
+         <tr>
+            <td>
+               <input
+                  class="select-on-focus"
+                  type="number"
+                  name="data.rings.water"
+                  value="{{data.rings.water}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+               <button type="button" class="roll-dice" data-stat="water">Roll</button>
+            </td>
+            <td>
+               <input
+                  class="select-on-focus"
+                  type="number"
+                  name="data.rings.earth"
+                  value="{{data.rings.earth}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+
+            <td>
+               <input
+                  class="select-on-focus"
+                  type="number"
+                  name="data.rings.fire"
+                  value="{{data.rings.fire}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+            <td>
+               <input
+                  class="select-on-focus"
+                  type="number"
+                  name="data.rings.air"
+                  value="{{data.rings.air}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+            <td>
+               <input
+                  class="select-on-focus"
+                  type="number"
+                  name="data.rings.void"
+                  value="{{data.rings.void}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+         </tr>
+      </table>
+      <table>
+         <th>
+            Items :
+         </th>
+
+         <!-- for each item -->
+         {{#each items as |item|}}
+            <tr>
+               <td>
+                  <input
+                     class="select-on-focus"
+                     type="text"
+                     name="data.items.{{@index}}.name"
+                     value="{{item.name}}"
+                     data-type="String"
+                     placeholder="name"
+                  />
+               </td>
+
+               <td>
+                  <input
+                     class="select-on-focus"
+                     type="text"
+                     name="data.items.{{@index}}.description"
+                     value="{{item.system.description}}"
+                     data-type="String"
+                     placeholder="description"
+                  />
+               </td>
+            </tr>
+         {{/each}}
+      </table>
+   </div>
+
 </form>

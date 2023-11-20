@@ -14,4 +14,8 @@ export const RegisterHandlebars = function () {
       console.log(game.i18n.localize(key));
       return sanitizeIfFail(game.i18n.localize(key));
    });
+   Handlebars.registerHelper("localizeRing", function (ringId) {
+      const key = "l5r4ec.rings." + ringId.toLowerCase();
+      return sanitizeIfFail(game.i18n.localize(key));
+   });
 };

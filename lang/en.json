@@ -11,6 +11,13 @@
             "jiujitsu": "Jiujitsu",
             "heavy-weapons": "Heavy weapons"
          }
+      },
+      "rings": {
+         "air": "Air",
+         "earth": "Earth",
+         "fire": "Fire",
+         "water": "Water",
+         "void": "Void"
       }
    }
 }
