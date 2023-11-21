@@ -18,6 +18,16 @@
          "fire": "Fire",
          "water": "Water",
          "void": "Void"
+      },
+      "traits": {
+         "strength": "Strength",
+         "perception": "Perception",
+         "stamina": "Stamina",
+         "willpower": "Willpower",
+         "reflexes": "Reflexes",
+         "awareness": "Awareness",
+         "agility": "Agility",
+         "intelligence": "Intelligence"
       }
    }
 }

@@ -18,6 +18,16 @@
          "fire": "Feu",
          "water": "Eau",
          "void": "Vide"
+      },
+      "traits": {
+         "strength": "Force",
+         "perception": "Perception",
+         "stamina": "Constitution",
+         "willpower": "Volonté",
+         "reflexes": "Reflexes",
+         "awareness": "Intuition",
+         "agility": "Agilité",
+         "intelligence": "Intelligence"
       }
    }
 }

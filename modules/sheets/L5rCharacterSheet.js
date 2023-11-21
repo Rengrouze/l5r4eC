@@ -4,7 +4,7 @@ export default class L5rCharacterSheet extends ActorSheet {
       return foundry.utils.mergeObject(super.defaultOptions, {
          classes: ["l5r4ec", "sheet", "actor"],
          template: CONFIG.l5r4ec.paths.templates + "actors/characters/character-sheet.hbs",
-         width: 920,
+         width: 820,
          height: 780,
          tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
       });
@@ -19,6 +19,7 @@ export default class L5rCharacterSheet extends ActorSheet {
          config: CONFIG.l5r4ec,
          items: baseData.items,
       };
+      await this._updateRingLevels(sheetData.data.rings, sheetData.data.traits);
       console.log(sheetData);
       console.log(sheetData.data.rings.air);
       console.log(sheetData.data.rings.earth);
@@ -26,6 +27,27 @@ export default class L5rCharacterSheet extends ActorSheet {
       console.log(sheetData.data.rings.water);
       console.log(sheetData.data.rings.void);
       return sheetData;
+   }
+
+   async _updateRingLevels(rings, traits) {
+      // Obtient les niveaux de tous les traits associés aux anneaux
+
+      console.log(traits);
+      const traitLevels = {
+         water: Math.min(traits.strength, traits.perception),
+         earth: Math.min(traits.stamina, traits.willpower),
+         fire: Math.min(traits.agility, traits.intelligence),
+         air: Math.min(traits.awareness, traits.reflexes),
+      };
+      console.log(traitLevels);
+
+      // Met à jour les niveaux des anneaux en fonction des niveaux des traits associés
+      for (const [ring] of Object.entries(rings)) {
+         // Vérifie si l'anneau n'est pas "void" avant de mettre à jour
+         if (ring !== "void") {
+            rings[ring] = traitLevels[ring];
+         }
+      }
    }
 
    activateListeners(html) {

@@ -92,6 +92,54 @@
   left: 45px !important;
 }
 
+#traits-inputs-earth input {
+  border: 3px solid #699678 !important;
+  border-radius: 100% !important;
+  background-color: white !important;
+  color: #699678 !important;
+  outline: none !important;
+  width: 38px !important;
+  height: 38px !important;
+  text-align: center !important;
+  font-size: larger !important;
+}
+
+#traits-inputs-water input {
+  border: 3px solid #5f919b !important;
+  border-radius: 100% !important;
+  background-color: white !important;
+  color: #5f919b !important;
+  outline: none !important;
+  width: 38px !important;
+  height: 38px !important;
+  text-align: center !important;
+  font-size: larger !important;
+}
+
+#traits-inputs-air input {
+  border: 3px solid #917896 !important;
+  border-radius: 100% !important;
+  background-color: white !important;
+  color: #917896 !important;
+  outline: none !important;
+  width: 38px !important;
+  height: 38px !important;
+  text-align: center !important;
+  font-size: larger !important;
+}
+
+#traits-inputs-fire input {
+  border: 3px solid #9b7350 !important;
+  border-radius: 100% !important;
+  background-color: white !important;
+  color: #9b7350 !important;
+  outline: none !important;
+  width: 38px !important;
+  height: 38px !important;
+  text-align: center !important;
+  font-size: larger !important;
+}
+
 /* flexbox */
 .flex {
   display: flex;

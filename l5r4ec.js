@@ -16,11 +16,11 @@ Hooks.once("init", function () {
    console.log("l5r4ec | initialisation du mod spécial Cyrus");
 
    CONFIG.l5r4ec = l5r4ec;
-   RegisterHandlebars();
 
    Items.unregisterSheet("core", ItemSheet);
    Items.registerSheet("L5r Item", L5rWeaponSheet, { makeDefault: true });
    // Items.registerSheet("L5r Item", L5rWeaponSheet);
    Actors.unregisterSheet("core", ActorSheet);
    Actors.registerSheet("L5r Actor", L5rCharacterSheet);
+   RegisterHandlebars();
 });
