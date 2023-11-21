@@ -29,7 +29,7 @@
       }
    ],
 
-   "styles": ["styles/system-styles.css"],
+   "styles": ["styles/styles.css"],
    "languages": [
       {
          "lang": "fr",
