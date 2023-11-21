@@ -33,73 +33,104 @@ export default class L5rCharacterSheet extends ActorSheet {
    }
 
    async _onRollDice(event) {
-      // Récupère le stat associé au bouton cliqué
       const stat = event.currentTarget.dataset.stat;
-
-      // Récupère la valeur du stat d'anneau
       const statValue = this.actor.system.rings[stat];
-
-      // Effectue le jet de dés et garde en utilisant l'API de Foundry VTT
       const rollResult = await this._rollAndKeepDice(statValue, statValue);
-
-      // Affiche le résultat dans le chat
       this._displayRollResult(stat, rollResult, statValue);
    }
 
    async _rollAndKeepDice(roll, keep) {
-      // Utilise l'API de Foundry VTT pour effectuer le jet de dés
       const rollFormula = `${roll}d10kh${keep}`;
       const rollResult = await new Roll(rollFormula).evaluate({ async: true });
 
-      // Retourne le résultat du jet
-      return rollResult;
+      let total = rollResult.dice[0].results.slice(0, keep).reduce((sum, result) => sum + result.result, 0);
+
+      const explodedResults = [];
+
+      const explodeCount = rollResult.dice[0].results.filter((result) => result.result === 10).length;
+      for (let i = 0; i < explodeCount; i++) {
+         const additionalRoll = await new Roll("1d10").evaluate({ async: true });
+         if (additionalRoll && additionalRoll.dice && additionalRoll.dice.length > 0) {
+            total += additionalRoll.dice[0].results[0].result;
+            explodedResults.push(additionalRoll.dice[0].results[0].result);
+            console.log(`Relance pour le dé de 10 : ${additionalRoll.dice[0].results[0].result}`);
+         } else {
+            console.error("Les résultats de la relance du dé de 10 ne sont pas définis comme prévu.");
+         }
+      }
+
+      return {
+         total: total,
+         diceResults: rollResult.dice[0].results,
+         exploded: explodedResults,
+      };
    }
 
    _displayRollResult(stat, rollResult, keep) {
-      // Vérifie si les résultats du jet sont définis
-      if (rollResult && rollResult.terms && rollResult.terms[0] && rollResult.terms[0].results) {
-         // Récupère les détails du jet
-         const diceResults = rollResult.terms[0].results;
-
-         // Compte le nombre de dés qui ont explosé
+      if (rollResult && rollResult.total && rollResult.diceResults && rollResult.diceResults.length > 0) {
+         const diceResults = rollResult.diceResults;
          const explodeCount = diceResults.filter((result) => result.result === 10).length;
+         const detailedResults = this._formatDetailedResults(diceResults, rollResult.exploded || []);
 
-         // Formate le message pour le chat
          const messageContent = `<b>Résultat du jet de dés pour ${stat} :</b><br>
-            Dés lancés : ${rollResult.terms[0].number}<br>
+            Dés lancés : ${rollResult.diceResults.length}<br>
             Dés gardés : ${keep}<br>
             Total : ${rollResult.total}<br>
             Dés explosés : ${explodeCount}<br>
-            Résultats détaillés : ${this._formatDetailedResults(diceResults)}`;
+            Résultats détaillés : ${detailedResults}`;
 
-         // Crée le message de chat
          const chatData = {
             user: game.user._id,
             speaker: ChatMessage.getSpeaker(),
             content: messageContent,
          };
 
-         // Envoie le message de chat
          ChatMessage.create(chatData, {});
       } else {
          console.error("Les résultats du jet de dés ne sont pas définis comme prévu.");
       }
    }
 
-   _formatDetailedResults(diceResults) {
-      // Formate les résultats détaillés avec des couleurs pour les dés explosés
-      const formattedResults = diceResults
-         .map((result) => {
-            let textColor = "";
-            if (result.result === 10) {
-               textColor = "green";
-            } else if (result.result === 1) {
-               textColor = "red";
-            }
-            return `<span style="color:${textColor};">${result.result}</span>`;
-         })
-         .join(", ");
+   _formatDetailedResults(diceResults, explodedResults) {
+      // Vérifie si les résultats du jet sont définis
+      if (diceResults && diceResults.length > 0) {
+         // Formate les résultats détaillés avec des couleurs pour les dés explosés
+         const formattedResults = diceResults
+            .map((result) => {
+               let textColor = "";
+               let displayResult = result.result;
 
-      return formattedResults;
+               if (result.result === 10) {
+                  // Stocke la valeur initiale avant la relance
+                  const initialResult = result.result;
+
+                  // Récupère le résultat de la relance
+                  const additionalResult = explodedResults.shift(); // Prend le premier résultat de la liste
+
+                  // Vérifie si le résultat de la relance est défini
+                  if (additionalResult) {
+                     textColor = "green";
+
+                     // Affiche le résultat de la relance
+                     displayResult = `${initialResult}+${additionalResult}`;
+
+                     // Ajoute le résultat de la relance dans le chat
+                     console.log(`Relance pour le dé de 10 : ${additionalResult}`);
+                  } else {
+                     console.error("Les résultats de la relance du dé de 10 ne sont pas définis comme prévu.");
+                  }
+               } else if (result.result === 1) {
+                  textColor = "red";
+               }
+
+               return `<span style="color:${textColor};">${displayResult}</span>`;
+            })
+            .join(", ");
+
+         return formattedResults;
+      } else {
+         console.error("Les résultats du jet de dés ne sont pas définis comme prévu.");
+         return ""; // Retourne une chaîne vide en cas d'erreur
+      }
    }
 }
