@@ -1,47 +1,9 @@
-.text-blue {
-   color: #007bff;
-}
+@import "variables/variables.scss";
+@import "basic/flex.scss";
+@import "basic/text.scss";
+
 .separator {
    border-bottom: 1px solid #020000;
    margin-bottom: 20px;
    margin-top: 20px;
-}
-
-/* flexbox */
-.flex {
-   display: flex;
-}
-.flex-column {
-   flex-direction: column;
-}
-.flex-row {
-   flex-direction: row;
-}
-.border {
-   border: 1px solid #020000;
-}
-.absolute {
-   position: absolute;
-}
-.relative {
-   position: relative;
-}
-.center {
-   align-items: center;
-   justify-content: center;
-}
-.justify-center {
-   justify-content: center;
-}
-.align-center {
-   align-items: center;
-}
-.align-end {
-   align-items: flex-end;
-}
-.justify-end {
-   justify-content: flex-end;
-}
-.justify-between {
-   justify-content: space-between;
 }

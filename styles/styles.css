@@ -1,13 +1,5 @@
-.text-blue {
-  color: #007bff;
-}
-
-.separator {
-  border-bottom: 1px solid #020000;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
+/* text colors */
+/* Rings */
 /* flexbox */
 .flex {
   display: flex;
@@ -58,4 +50,32 @@
   justify-content: space-between;
 }
 
-/*# sourceMappingURL=styles.css.map */
+.text-primary {
+  color: #000000;
+}
+
+.text-water-ring {
+  color: #5f919b;
+}
+
+.text-fire-ring {
+  color: #9b7350;
+}
+
+.text-earth-ring {
+  color: #a8a878;
+}
+
+.text-air-ring {
+  color: #917896;
+}
+
+.text-void-ring {
+  color: #4b4641;
+}
+
+.separator {
+  border-bottom: 1px solid #020000;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
