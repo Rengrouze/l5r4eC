@@ -43,26 +43,43 @@ export default class L5rCharacterSheet extends ActorSheet {
       const rollFormula = `${roll}d10kh${keep}`;
       const rollResult = await new Roll(rollFormula).evaluate({ async: true });
 
-      let total = rollResult.dice[0].results.slice(0, keep).reduce((sum, result) => sum + result.result, 0);
+      // Initialise la liste des résultats formatés
+      const formattedResults = [];
 
-      const explodedResults = [];
+      // Parcours les résultats du jet
+      for (const result of rollResult.dice[0].results) {
+         let displayResult = result.result;
 
-      const explodeCount = rollResult.dice[0].results.filter((result) => result.result === 10).length;
-      for (let i = 0; i < explodeCount; i++) {
-         const additionalRoll = await new Roll("1d10").evaluate({ async: true });
-         if (additionalRoll && additionalRoll.dice && additionalRoll.dice.length > 0) {
-            total += additionalRoll.dice[0].results[0].result;
-            explodedResults.push(additionalRoll.dice[0].results[0].result);
-            console.log(`Relance pour le dé de 10 : ${additionalRoll.dice[0].results[0].result}`);
-         } else {
-            console.error("Les résultats de la relance du dé de 10 ne sont pas définis comme prévu.");
+         if (result.result === 10) {
+            // Relance le dé de 10 jusqu'à ce qu'il n'explose plus
+            do {
+               const additionalRoll = await new Roll("1d10").evaluate({ async: true });
+               if (additionalRoll && additionalRoll.dice && additionalRoll.dice.length > 0) {
+                  const additionalResult = additionalRoll.total;
+
+                  // Ajoute le résultat de la relance à la somme
+                  displayResult += additionalResult;
+
+                  console.log(`Relance pour le dé de 10 : ${additionalResult}`);
+
+                  // Continue la cascade si la relance est un 10
+               } else {
+                  console.error("Les résultats de la relance du dé de 10 ne sont pas définis comme prévu.");
+                  break;
+               }
+            } while (displayResult % 10 === 0); // Continue la boucle jusqu'à ce que la relance ne soit pas un 10
          }
+
+         // Ajoute le résultat dans la liste
+         formattedResults.push(displayResult);
       }
+
+      // Calcule la somme totale
+      const total = formattedResults.reduce((sum, result) => sum + result, 0);
 
       return {
          total: total,
-         diceResults: rollResult.dice[0].results,
-         exploded: explodedResults,
+         diceResults: formattedResults,
       };
    }
 
@@ -91,35 +108,18 @@ export default class L5rCharacterSheet extends ActorSheet {
       }
    }
 
-   _formatDetailedResults(diceResults, explodedResults) {
+   _formatDetailedResults(diceResults) {
       // Vérifie si les résultats du jet sont définis
       if (diceResults && diceResults.length > 0) {
          // Formate les résultats détaillés avec des couleurs pour les dés explosés
          const formattedResults = diceResults
             .map((result) => {
                let textColor = "";
-               let displayResult = result.result;
+               let displayResult = result;
 
-               if (result.result === 10) {
-                  // Stocke la valeur initiale avant la relance
-                  const initialResult = result.result;
-
-                  // Récupère le résultat de la relance
-                  const additionalResult = explodedResults.shift(); // Prend le premier résultat de la liste
-
-                  // Vérifie si le résultat de la relance est défini
-                  if (additionalResult) {
-                     textColor = "green";
-
-                     // Affiche le résultat de la relance
-                     displayResult = `${initialResult}+${additionalResult}`;
-
-                     // Ajoute le résultat de la relance dans le chat
-                     console.log(`Relance pour le dé de 10 : ${additionalResult}`);
-                  } else {
-                     console.error("Les résultats de la relance du dé de 10 ne sont pas définis comme prévu.");
-                  }
-               } else if (result.result === 1) {
+               if (result >= 10) {
+                  textColor = "green";
+               } else if (result === 1) {
                   textColor = "red";
                }
 
