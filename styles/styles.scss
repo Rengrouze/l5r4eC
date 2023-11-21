@@ -1,7 +1,10 @@
 @import "variables/variables.scss";
 @import "basic/flex.scss";
 @import "basic/text.scss";
-
+@import "basic/margin.scss";
+@import "basic/padding.scss";
+@import "basic/positions.scss";
+@import "basic/borders.scss";
 .separator {
    border-bottom: 1px solid #020000;
    margin-bottom: 20px;

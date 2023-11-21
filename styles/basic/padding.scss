@@ -1,0 +1,37 @@
+$padding-values: 1 2 3 4 5 6 7 8 9 10;
+
+/* no padding */
+.p-0 {
+   padding: 0;
+}
+
+@mixin generate-padding {
+   @for $i from 1 through length($padding-values) {
+      $current-padding: nth($padding-values, $i);
+      .pb-#{$current-padding} {
+         margin-bottom: #{$current-padding}rem;
+      }
+      .pt-#{$current-padding} {
+         margin-top: #{$current-padding}rem;
+      }
+      .pl-#{$current-padding} {
+         margin-left: #{$current-padding}rem;
+      }
+      .pr-#{$current-padding} {
+         margin-right: #{$current-padding}rem;
+      }
+      .py-#{$current-padding} {
+         margin-top: #{$current-padding}rem;
+         margin-bottom: #{$current-padding}rem;
+      }
+      .px-#{$current-padding} {
+         margin-left: #{$current-padding}rem;
+         margin-right: #{$current-padding}rem;
+      }
+      .p-#{$current-padding} {
+         margin: #{$current-padding}rem;
+      }
+   }
+}
+
+@include generate-padding;

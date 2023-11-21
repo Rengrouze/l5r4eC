@@ -1,0 +1,50 @@
+$position-values: ();
+
+@for $i from 0 through 300 {
+   $position-values: append($position-values, $i);
+}
+
+@mixin generate-position-values {
+   @each $value in $position-values {
+      .top-#{$value} {
+         top: #{$value}px;
+      }
+      .right-#{$value} {
+         right: #{$value}px;
+      }
+      .bottom-#{$value} {
+         bottom: #{$value}px;
+      }
+      .left-#{$value} {
+         left: #{$value}px;
+      }
+   }
+}
+
+@include generate-position-values;
+
+/* same but for negative values */
+$negative-position-values: ();
+
+@for $i from 0 through 300 {
+   $negative-position-values: append($negative-position-values, -$i);
+}
+
+@mixin generate-negative-position-values {
+   @each $value in $negative-position-values {
+      .top-n#{$value} {
+         top: #{$value}px;
+      }
+      .right-n#{$value} {
+         right: #{$value}px;
+      }
+      .bottom-n#{$value} {
+         bottom: #{$value}px;
+      }
+      .left-n#{$value} {
+         left: #{$value}px;
+      }
+   }
+}
+
+@include generate-negative-position-values;

@@ -1,23 +1,93 @@
+.bold {
+   font-weight: bold;
+}
+.italic {
+   font-style: italic;
+}
+.underline {
+   text-decoration: underline;
+}
+.strike {
+   text-decoration: line-through;
+}
+.uppercase {
+   text-transform: uppercase;
+}
+.lowercase {
+   text-transform: lowercase;
+}
+.capitalize {
+   text-transform: capitalize;
+}
+
+/* text sizes */
+.text-xxs {
+   font-size: 0.5rem;
+}
+
+.text-xs {
+   font-size: 0.75rem;
+}
+
+.text-sm {
+   font-size: 0.875rem;
+}
+
+.text-md {
+   font-size: 1rem;
+}
+
+.text-lg {
+   font-size: 1.125rem;
+}
+
+.text-xl {
+   font-size: 1.25rem;
+}
+
+.text-xxl {
+   font-size: 1.5rem;
+}
+
+.text-xxxl {
+   font-size: 2rem;
+}
+
+/* text align */
+.text-left {
+   text-align: left;
+}
+
+.text-center {
+   text-align: center;
+}
+
+.text-right {
+   text-align: right;
+}
+
+/* text colors */
+
 .text-primary {
    color: #000000;
 }
 
-.text-water-ring {
+.text-water {
    color: $water-ring;
 }
 
-.text-fire-ring {
+.text-fire {
    color: $fire-ring;
 }
 
-.text-earth-ring {
+.text-earth {
    color: $earth-ring;
 }
 
-.text-air-ring {
+.text-air {
    color: $air-ring;
 }
 
-.text-void-ring {
+.text-void {
    color: $void-ring;
 }

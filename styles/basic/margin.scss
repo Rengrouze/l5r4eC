@@ -1,0 +1,54 @@
+$margin-values: 0 5 10 15 20 25 30 35 40 45 50 55 60 65 120; // Ajoutez les valeurs de marges souhaitées ici
+
+.m0 {
+   margin: 0;
+}
+
+@mixin generate-margins {
+   @each $value in $margin-values {
+      .mb-#{$value} {
+         margin-bottom: #{$value}px;
+      }
+      .mt-#{$value} {
+         margin-top: #{$value}px;
+      }
+      .ml-#{$value} {
+         margin-left: #{$value}px;
+      }
+      .mr-#{$value} {
+         margin-right: #{$value}px;
+      }
+      .my-#{$value} {
+         margin-top: #{$value}px;
+         margin-bottom: #{$value}px;
+      }
+      .mx-#{$value} {
+         margin-left: #{$value}px;
+         margin-right: #{$value}px;
+      }
+
+      // Marges négatives
+      .mb-n#{$value} {
+         margin-bottom: -#{$value}px;
+      }
+      .mt-n#{$value} {
+         margin-top: -#{$value}px;
+      }
+      .ml-n#{$value} {
+         margin-left: -#{$value}px;
+      }
+      .mr-n#{$value} {
+         margin-right: -#{$value}px;
+      }
+      .my-n#{$value} {
+         margin-top: -#{$value}px;
+         margin-bottom: -#{$value}px;
+      }
+      .mx-n#{$value} {
+         margin-left: -#{$value}px;
+         margin-right: -#{$value}px;
+      }
+   }
+}
+
+@include generate-margins;
