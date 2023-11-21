@@ -21,7 +21,10 @@ export default class L5rCharacterSheet extends ActorSheet {
       };
       console.log(sheetData);
       console.log(sheetData.data.rings.air);
-      console.log(sheetData.data.rings.earth.value);
+      console.log(sheetData.data.rings.earth);
+      console.log(sheetData.data.rings.fire);
+      console.log(sheetData.data.rings.water);
+      console.log(sheetData.data.rings.void);
       return sheetData;
    }
 

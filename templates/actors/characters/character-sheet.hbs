@@ -10,18 +10,40 @@
       
          <div class="flex flex-col text-xl bold justify-center align-center"><ul class="p-0">
                <li class="flex flex-row w-full justify-center align-center">
-                  <div class="relative "><img
+                  <div class="relative ">
+                     <img
                         src="/systems/l5r4ec/assets/icons/rings/earth.svg"
                         alt="le symbole de l'anneau de la terre"
                         height="128"
                         width="128" class="no-borders"
-                     /><p class="text-earth top-64 absolute right-150">{{localize "l5r4ec.rings.earth"}}</p></div>
+                     />
+                     <p class="text-earth top-64 absolute right-150">{{localize "l5r4ec.rings.earth"}}</p>
+                     <div  id="ring-inputs-earth"><input
+                 
+                  type="number"
+                  name="data.rings.earth"
+                  value="{{data.rings.earth}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+                  
+               /></div></div>
                      <div class="relative "><img
                         src="/systems/l5r4ec/assets/icons/rings/air.svg"
                         alt="le symbole de l'anneau de l'air"
                         height="128"
                         width="128" class="no-borders"
-                     /><p class="text-air absolute top-64 left-150">{{localize "l5r4ec.rings.air"}}</p></div>
+                     /><p class="text-air absolute top-64 left-150">{{localize "l5r4ec.rings.air"}}</p>
+                     <div id="ring-inputs-air"><input
+                  
+                  type="number"
+                  name="data.rings.air"
+                  value="{{data.rings.air}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               /></div>
+                     </div>
                      </li>
                <li class="flex flex-row w-full mt-n20 justify-center align-center"><div class=" relative mr-30"><img
                         src="/systems/l5r4ec/assets/icons/rings/water.svg"
@@ -29,101 +51,119 @@
                         height="128"
                         width="128" class="no-borders"
                      /><p class="text-water absolute top-64 right-150">{{localize "l5r4ec.rings.water"}}</p>
-                  </div>
-                  <div class=" relative ml-30"><img
-                        src="/systems/l5r4ec/assets/icons/rings/fire.svg"
-                        alt="le symbole de l'anneau du feu"
-                        height="128"
-                        width="128" class="no-borders"
-                     /><p class="text-fire absolute top-64 left-150">{{localize "l5r4ec.rings.fire"}}</p></div>
-
-               </li>
-               <li class="flex flex-col justify-center align-center mt-n45">
-               
-               <img
-                        src="/systems/l5r4ec/assets/icons/rings/void.svg"
-                        alt="le symbole de l'anneau du vide"
-                        height="128"
-                        width="128" class="no-borders"
-                     /><p class="text-void text-center m-0 ">{{localize "l5r4ec.rings.void"}}</p></div>
-               </li>
-            </ul></div>
-      
-   </div>
-
-   <div>
-      <table>
-         <tr>
-            <th class="text-blue">{{localize "l5r4ec.rings.water"}}</th>
-            <th>{{localize "l5r4ec.rings.earth"}}</th>
-            <th>{{localize "l5r4ec.rings.fire"}}</th>
-            <th>{{localize "l5r4ec.rings.air"}}</th>
-            <th>{{localize "l5r4ec.rings.void"}}</th>
-
-         </tr>
-         <tr>
-            <td>
-               <input
-                  class="select-on-focus"
+                     <div id="ring-inputs-water"> <input
+                  
                   type="number"
                   name="data.rings.water"
                   value="{{data.rings.water}}"
                   data-type="Number"
                   min="0"
                   placeholder="0"
-               />
-               <button class="roll-dice" data-stat="water" data-roll-type="trait">roll water</button>
-            </td>
-            <td>
-               <input
-                  class="select-on-focus"
-                  type="number"
-                  name="data.rings.earth"
-                  value="{{data.rings.earth}}"
-                  data-type="Number"
-                  min="0"
-                  placeholder="0"
-               />
-            </td>
-
-            <td>
-               <input
-                  class="select-on-focus"
+               /></div>
+                       
+                  </div>
+                  <div class=" relative ml-30"><img
+                        src="/systems/l5r4ec/assets/icons/rings/fire.svg"
+                        alt="le symbole de l'anneau du feu"
+                        height="128"
+                        width="128" class="no-borders"
+                     /><p class="text-fire absolute top-64 left-150">{{localize "l5r4ec.rings.fire"}}</p>
+                     <div  id="ring-inputs-fire"><input
+                 
                   type="number"
                   name="data.rings.fire"
                   value="{{data.rings.fire}}"
                   data-type="Number"
                   min="0"
+                  
                   placeholder="0"
-               />
-            </td>
-            <td>
-               <input
-                  class="select-on-focus"
-                  type="number"
-                  name="data.rings.air"
-                  value="{{data.rings.air}}"
-                  data-type="Number"
-                  min="0"
-                  placeholder="0"
-               />
-            </td>
-            <td>
-               <input
-                  class="select-on-focus"
+               /></div>                     </div>
+
+               </li>
+               <li class="flex flex-col justify-center align-center  mt-n60">
+                  <div class=" relative ">
+                  <img
+                           src="/systems/l5r4ec/assets/icons/rings/void.svg"
+                           alt="le symbole de l'anneau du vide"
+                           height="128"
+                           width="128" class="no-borders"
+                        />
+                        <p class="text-void text-center m-0 ">{{localize "l5r4ec.rings.void"}}</p>
+                     <div  id="ring-inputs-void"> <input
+                 
                   type="number"
                   name="data.rings.void"
                   value="{{data.rings.void}}"
                   data-type="Number"
                   min="0"
                   placeholder="0"
-               />
-            </td>
-         </tr>
-      </table>
+               /></div>
+                    </div>
+                  
+               </li>
+            </ul></div>
+      
+   </div>
+
+   <div>       
       <h3>Traits</h3>
       <table>
-         <th></th>
+         <tr> 
+            <th>
+           {{localize "l5r4ec.rings.water"}}
+         </th>
+         <th>
+           {{localize "l5r4ec.rings.earth"}}
+         </th>
+         <th>
+           {{localize "l5r4ec.rings.air"}}
+         </th>
+         <th>
+           {{localize "l5r4ec.rings.fire"}}
+         </th>
+         
+         </tr>
+         <tr>
+            <td>
+               
+                <div>
+                  strength
+               </div>
+            </td>
+            <td>
+               <div>
+                  stamina
+               </div>
+               
+            </td>
+            <td>
+                <div>
+                  reflexes
+               </div>
+               
+            </td>
+            <td>
+               <div>agility</div>
+         </tr>
+         <tr> 
+            <td>
+              <div>perception</div>
+
+            </td>
+            <td>
+              <div>willpower</div>
+               
+            </td>
+            <td>
+               <div>awareness</div>
+            </td>
+            <td>
+               <div>
+                  intelligence
+               </div>
+            </td>
+         </tr>
+        
       </table>
 
       <table>

@@ -1,0 +1,82 @@
+#ring-inputs-earth input {
+   border: 3px solid $earth-ring !important;
+   border-radius: 100% !important;
+   color: $earth-ring !important;
+   outline: none !important;
+   position: absolute !important;
+   background-color: white !important;
+   width: 38px !important;
+   height: 38px !important;
+   text-align: center !important;
+   font-size: larger !important;
+   z-index: 1 !important;
+
+   padding: auto !important;
+
+   right: 5px !important;
+   bottom: 5px !important;
+}
+#ring-inputs-water input {
+   border: 3px solid $water-ring !important;
+   border-radius: 100% !important;
+   background-color: white !important;
+   color: $water-ring !important;
+   outline: none !important;
+   position: absolute !important;
+   width: 38px !important;
+   height: 38px !important;
+   text-align: center !important;
+   font-size: larger !important;
+   z-index: 1 !important;
+   padding: auto !important;
+   top: 25px !important;
+   right: -5px !important;
+}
+#ring-inputs-fire input {
+   border: 3px solid $fire-ring !important;
+   border-radius: 100% !important;
+   background-color: white !important;
+
+   color: $fire-ring !important;
+   outline: none !important;
+   position: absolute !important;
+   width: 38px !important;
+   height: 38px !important;
+   text-align: center !important;
+   font-size: larger !important;
+   z-index: 1 !important;
+   padding: auto !important;
+   top: 25px !important;
+   left: -5px !important;
+}
+#ring-inputs-air input {
+   border: 3px solid $air-ring !important;
+   border-radius: 100% !important;
+   background-color: white !important;
+   color: $air-ring !important;
+   outline: none !important;
+   position: absolute !important;
+   width: 38px !important;
+   height: 38px !important;
+   text-align: center !important;
+   font-size: larger !important;
+   z-index: 1 !important;
+   padding: auto !important;
+   bottom: 5px !important;
+   left: 5px !important;
+}
+#ring-inputs-void input {
+   border: 3px solid $void-ring !important;
+   border-radius: 100% !important;
+   background-color: white !important;
+   color: $void-ring !important;
+   outline: none !important;
+   position: absolute !important;
+   width: 38px !important;
+   height: 38px !important;
+   text-align: center !important;
+   font-size: larger !important;
+   z-index: 1 !important;
+   top: -10px !important;
+   left: 45px !important;
+}
