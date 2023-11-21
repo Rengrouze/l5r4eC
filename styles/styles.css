@@ -1,0 +1,81 @@
+/* text colors */
+/* Rings */
+/* flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.border {
+  border: 1px solid #020000;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-primary {
+  color: #000000;
+}
+
+.text-water-ring {
+  color: #5f919b;
+}
+
+.text-fire-ring {
+  color: #9b7350;
+}
+
+.text-earth-ring {
+  color: #a8a878;
+}
+
+.text-air-ring {
+  color: #917896;
+}
+
+.text-void-ring {
+  color: #4b4641;
+}
+
+.separator {
+  border-bottom: 1px solid #020000;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "l5r4ec",
+  "version": "1.0.0",
+  "description": "Bonjour ! je suis un joueur de la 4ème édition de L5R et afin de profiter du système de VTT foundry j'ai décidé de créer un système adapté à ce jeu de rôle.",
+  "main": "l5r4ec.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rengrouze/l5r4eC.git"
+  },
+  "author": "Rengrouze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rengrouze/l5r4eC/issues"
+  },
+  "homepage": "https://github.com/Rengrouze/l5r4eC#readme"
+}

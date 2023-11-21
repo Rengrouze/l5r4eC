@@ -1,0 +1,9 @@
+@import "variables/variables.scss";
+@import "basic/flex.scss";
+@import "basic/text.scss";
+
+.separator {
+   border-bottom: 1px solid #020000;
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
