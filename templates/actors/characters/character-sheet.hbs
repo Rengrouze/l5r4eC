@@ -3,10 +3,31 @@
       <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64" />
       <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
    </header>
+   <!-- make a separator -->
+   <div class="separator"></div>
+
+   <div class="central-col">
+      <div class="rings">
+         <div class="flex flex-col"><ul>
+               <li class="flex flex-row"><div class="border"><p class="text-blue">Eau</p><img
+                        src="/systems/l5r4ec/assets/icons/rings/water.svg"
+                        alt="le symbole de l'anneau de l'eau"
+                        height="128"
+                        width="128"
+                     />
+
+                     
+                     </li>
+               <li class="flex flex-row"><div class="border">Terre</div><div>Air</div></li>
+               <li class="flex flex-row"><div class="border">Vide</div></li>
+            </ul></div>
+      </div>
+   </div>
+
    <div>
       <table>
          <tr>
-            <th>{{localize "l5r4ec.rings.water"}}</th>
+            <th class="text-blue">{{localize "l5r4ec.rings.water"}}</th>
             <th>{{localize "l5r4ec.rings.earth"}}</th>
             <th>{{localize "l5r4ec.rings.fire"}}</th>
             <th>{{localize "l5r4ec.rings.air"}}</th>
@@ -24,7 +45,7 @@
                   min="0"
                   placeholder="0"
                />
-               <button type="button" class="roll-dice" data-stat="water">Roll</button>
+               <button class="roll-dice" data-stat="water" data-roll-type="trait">roll water</button>
             </td>
             <td>
                <input
@@ -73,6 +94,11 @@
             </td>
          </tr>
       </table>
+      <h3>Traits</h3>
+      <table>
+         <th></th>
+      </table>
+
       <table>
          <th>
             Items :

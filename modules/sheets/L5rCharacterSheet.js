@@ -4,8 +4,8 @@ export default class L5rCharacterSheet extends ActorSheet {
       return foundry.utils.mergeObject(super.defaultOptions, {
          classes: ["l5r4ec", "sheet", "actor"],
          template: CONFIG.l5r4ec.paths.templates + "actors/characters/character-sheet.hbs",
-         width: 520,
-         height: 480,
+         width: 920,
+         height: 780,
          tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
       });
    }
@@ -35,12 +35,14 @@ export default class L5rCharacterSheet extends ActorSheet {
    async _onRollDice(event) {
       const stat = event.currentTarget.dataset.stat;
       const statValue = this.actor.system.rings[stat];
-      const rollResult = await this._rollAndKeepDice(statValue, statValue);
+      const rollType = event.currentTarget.dataset.rollType; // Ajouter un attribut rollType au bouton HTML
+      const rollResult = await this._rollAndKeepDice(statValue, statValue, rollType);
       this._displayRollResult(stat, rollResult, statValue);
    }
 
-   async _rollAndKeepDice(roll, keep) {
-      const rollFormula = `${roll}d10kh${keep}`;
+   async _rollAndKeepDice(roll, keep, rollType) {
+      const rollFormula = rollType === "competence" ? `${roll}d10kl${keep}` : `${roll}d10kh${keep}`;
+
       const rollResult = await new Roll(rollFormula).evaluate({ async: true });
 
       // Initialise la liste des résultats formatés
