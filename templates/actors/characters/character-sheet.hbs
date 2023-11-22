@@ -7,15 +7,22 @@
    <div class="separator"></div>
 
    <div class="mb-100 flex flex-row justify-between">
-      <div class="">
-         <table>
+      <div class="flex flex-col">
+         <table id="earth-stats-table">
             <tr>
-               <th><h2 class="text-earth">{{localize "l5r4ec.rings.earth"}}</h2></th>
-
+               <th class="rings-traits"><h2 class="text-earth rings-traits no-borders m0">{{localize "l5r4ec.rings.earth"}}</h2></th>
+               <th><img
+                     src="/systems/l5r4ec/assets/icons/rings/earth.svg"
+                     alt="le symbole de l'anneau de la terre"
+                     height="32"
+                     width="32"
+                     class="no-borders"
+                  /></th>
             </tr>
             <tr>
                <td>
                   {{localize "l5r4ec.traits.stamina"}}
+                  
                </td>
                <td><div id="traits-inputs-earth">
                      <input
@@ -47,10 +54,16 @@
             </tr>
          </table>
 
-         <table>
+         <table id="water-stats-table">
             <tr>
-               <th><h2 class="text-water">{{localize "l5r4ec.rings.water"}}</h2></th>
-
+               <th class="rings-traits"><h2 class="text-water rings-traits no-borders m0">{{localize "l5r4ec.rings.water"}}</h2></th>
+               <th><img
+                     src="/systems/l5r4ec/assets/icons/rings/water.svg"
+                     alt="le symbole de l'anneau de l'eau"
+                     height="32"
+                     width="32"
+                     class="no-borders"
+                  /></th>
             </tr>
             <tr>
                <td>
@@ -85,11 +98,42 @@
                </td>
             </tr>
          </table>
+         <table id="void-stats-table">
+            <tr>
+               <th class="rings-traits"><h2 class="text-void rings-traits no-borders m0">{{localize "l5r4ec.rings.void"}}</h2></th>
+               <th><img
+                     src="/systems/l5r4ec/assets/icons/rings/void.svg"
+                     alt="le symbole de l'anneau du vide"
+                     height="32"
+                     width="32"
+                     class="no-borders"
+                  /></th>
+            </tr>
+            <tr>
+               <td>
+                  {{localize "l5r4ec.voidPoints"}}
+               </td>
+               <td>
+                 <div id="traits-inputs-void">
+                  <input
+                     type="number"
+                     name="data.void_points.spend"
+                     value="{{data.void_points.spend}}"
+                     data-type="Number"
+                     min="0"
+                     placeholder="0"
+                  />
+               
+                  
+               </td>
+               </div>
+            </tr>
+         </table>
       </div>
 
-      <div class="flex flex-col text-xl bold justify-center align-center"><ul class="p-0">
+      <div id="rings-section" class="flex flex-col text-xl bold justify-center align-center"><ul class="p-0">
             <li class="flex flex-row w-full justify-center align-center">
-               <div class="relative">
+               <div id="earth-ring-section" class="relative">
                   <img
                      src="/systems/l5r4ec/assets/icons/rings/earth.svg"
                      alt="le symbole de l'anneau de la terre"
@@ -113,7 +157,7 @@
                         min="0"
                         placeholder="0"
                      /></div></div>
-               <div class="relative"><img
+               <div id="air-ring-section" class="relative"><img
                      src="/systems/l5r4ec/assets/icons/rings/air.svg"
                      alt="le symbole de l'anneau de l'air"
                      height="128"
@@ -137,7 +181,8 @@
                      /></div>
                </div>
             </li>
-            <li class="flex flex-row w-full mt-n20 justify-center align-center"><div class="relative mr-30"><img
+            <li class="flex flex-row w-full mt-n20 justify-center align-center">
+               <div id="water-ring-section" class="relative mr-30"><img
                      src="/systems/l5r4ec/assets/icons/rings/water.svg"
                      alt="le symbole de l'anneau de l'eau"
                      height="128"
@@ -162,7 +207,7 @@
                      /></div>
 
                </div>
-               <div class="relative ml-30"><img
+               <div id="fire-ring-section" class="relative ml-30"><img
                      src="/systems/l5r4ec/assets/icons/rings/fire.svg"
                      alt="le symbole de l'anneau du feu"
                      height="128"
@@ -188,7 +233,7 @@
 
             </li>
             <li class="flex flex-col justify-center align-center mt-n60">
-               <div class="relative">
+               <div id="void-ring-section" class="relative">
                   <img
                      src="/systems/l5r4ec/assets/icons/rings/void.svg"
                      alt="le symbole de l'anneau du vide"
@@ -217,10 +262,17 @@
 
             </li>
          </ul></div>
-      <div class="">
-         <table>
+      <div class="flex flex-col">
+         <table id="air-stats-table">
             <tr>
-               <th><h2>{{localize "l5r4ec.rings.air"}}</h2></th>
+               <th class="rings-traits"><h2 class="text-air rings-traits no-borders m0">{{localize "l5r4ec.rings.air"}}</h2></th>
+               <th><img
+                     src="/systems/l5r4ec/assets/icons/rings/air.svg"
+                     alt="le symbole de l'anneau de l'air"
+                     height="32"
+                     width="32"
+                     class="no-borders"
+                  /></th>
 
             </tr>
             <tr>
@@ -257,10 +309,16 @@
             </tr>
          </table>
 
-         <table>
+         <table id="fire-stats-table">
             <tr>
-               <th><h2>{{localize "l5r4ec.rings.fire"}}</h2></th>
-
+               <th class="rings-traits"><h2 class="text-fire rings-traits no-borders m0">{{localize "l5r4ec.rings.fire"}}</h2></th>
+               <th><img
+                     src="/systems/l5r4ec/assets/icons/rings/fire.svg"
+                     alt="le symbole de l'anneau du feu"
+                     height="32"
+                     width="32"
+                     class="no-borders"
+                  /></th>
             </tr>
             <tr>
                <td><div id="traits-inputs-fire">

@@ -1,3 +1,4 @@
+@import "basic/fonts.scss";
 @import "variables/variables.scss";
 @import "basic/borders.scss";
 @import "basic/inputs.scss";
@@ -7,6 +8,10 @@
 @import "basic/padding.scss";
 @import "basic/positions.scss";
 @import "basic/size.scss";
+@import "basic/tables.scss";
+
+// @import "keyframes/keyframes.scss";
+// @import "keyframes/animations.scss";
 .separator {
    border-bottom: 1px solid #020000;
    margin-bottom: 20px;

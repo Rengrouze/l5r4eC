@@ -28,6 +28,9 @@
          "awareness": "Intuition",
          "agility": "Agilité",
          "intelligence": "Intelligence"
-      }
+      },
+      "voidPoints": "Points de Vide",
+      "maxVoidPoints": "Maximum",
+      "spentVoidPoints": "Dépensés"
    }
 }

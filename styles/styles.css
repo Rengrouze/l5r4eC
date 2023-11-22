@@ -1,3 +1,37 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "LogotypeL5r";
+  src: url("../fonts/LogotypeL5r.ttf") format("truetype");
+}
+@font-face {
+  font-family: "BrushtipTexe";
+  src: url("../fonts/BrushtipTexe.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PatrickHand";
+  src: url("../fonts/PatrickHand.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Caballar";
+  src: url("../fonts/Caballar.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ArchitectsDaughter";
+  src: url("../fonts/ArchitectsDaughter.ttf") format("truetype");
+}
+/* Choisissez la police par défaut 
+body {
+   font-family: "ArchitectsDaughter", sans-serif;
+}
+*/
+#rings-section {
+  font-family: "BrushtipTexe", sans-serif;
+}
+
+.rings-traits h2 {
+  font-family: "BrushtipTexe", sans-serif;
+}
+
 /* text colors */
 /* Rings */
 .no-borders {
@@ -140,6 +174,18 @@
   font-size: larger !important;
 }
 
+#traits-inputs-void input {
+  border: 3px solid #4b4641 !important;
+  border-radius: 100% !important;
+  background-color: white !important;
+  color: #4b4641 !important;
+  outline: none !important;
+  width: 38px !important;
+  height: 38px !important;
+  text-align: center !important;
+  font-size: larger !important;
+}
+
 /* flexbox */
 .flex {
   display: flex;
@@ -216,6 +262,11 @@
 
 .capitalize {
   text-transform: capitalize;
+}
+
+/* no underline */
+.no-under {
+  text-decoration: none;
 }
 
 /* text sizes */
@@ -11121,6 +11172,51 @@
 
 .w-80px {
   width: 80px;
+}
+
+#earth-stats-table {
+  display: inline-block;
+  width: 100%;
+  border: 3px solid #699678;
+  border-radius: 10%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#water-stats-table {
+  display: inline-block;
+  width: 100%;
+  border: 3px solid #5f919b;
+  border-radius: 10%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#fire-stats-table {
+  display: inline-block;
+  width: 100%;
+  border: 3px solid #9b7350;
+  border-radius: 10%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#air-stats-table {
+  display: inline-block;
+  width: 100%;
+  border: 3px solid #917896;
+  border-radius: 10%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#void-stats-table {
+  display: inline-block;
+  width: 100%;
+  border: 3px solid #4b4641;
+  border-radius: 10%;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .separator {

@@ -1,0 +1,45 @@
+#earth-stats-table {
+   display: inline-block;
+   width: 100%;
+
+   border: 3px solid $earth-ring;
+   border-radius: 10%;
+   padding-left: 2px;
+   padding-right: 2px;
+}
+#water-stats-table {
+   display: inline-block;
+   width: 100%;
+
+   border: 3px solid $water-ring;
+   border-radius: 10%;
+   padding-left: 2px;
+   padding-right: 2px;
+}
+#fire-stats-table {
+   display: inline-block;
+   width: 100%;
+
+   border: 3px solid $fire-ring;
+   border-radius: 10%;
+   padding-left: 2px;
+   padding-right: 2px;
+}
+#air-stats-table {
+   display: inline-block;
+   width: 100%;
+
+   border: 3px solid $air-ring;
+   border-radius: 10%;
+   padding-left: 2px;
+   padding-right: 2px;
+}
+#void-stats-table {
+   display: inline-block;
+   width: 100%;
+
+   border: 3px solid $void-ring;
+   border-radius: 10%;
+   padding-left: 2px;
+   padding-right: 2px;
+}

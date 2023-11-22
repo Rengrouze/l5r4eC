@@ -1,0 +1,41 @@
+// Font Logotype L5R
+@font-face {
+   font-family: "LogotypeL5r";
+   src: url("../fonts/LogotypeL5r.ttf") format("truetype");
+}
+
+// Font BrushtipTexe
+@font-face {
+   font-family: "BrushtipTexe";
+   src: url("../fonts/BrushtipTexe.ttf") format("truetype");
+}
+
+// Font PatrickHand
+@font-face {
+   font-family: "PatrickHand";
+   src: url("../fonts/PatrickHand.ttf") format("truetype");
+}
+
+// Font Caballar
+@font-face {
+   font-family: "Caballar";
+   src: url("../fonts/Caballar.ttf") format("truetype");
+}
+
+// Font ArchitectsDaughter
+@font-face {
+   font-family: "ArchitectsDaughter";
+   src: url("../fonts/ArchitectsDaughter.ttf") format("truetype");
+}
+
+/* Choisissez la police par défaut 
+body {
+   font-family: "ArchitectsDaughter", sans-serif;
+}
+*/
+#rings-section {
+   font-family: "BrushtipTexe", sans-serif;
+}
+.rings-traits h2 {
+   font-family: "BrushtipTexe", sans-serif;
+}

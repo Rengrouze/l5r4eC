@@ -1,0 +1,21 @@
+#earth-ring-section {
+   animation: earth-ring-intro 500ms ease-in-out;
+}
+#fire-ring-section {
+   animation: fire-ring-intro 500ms ease-in-out;
+   &:hover {
+      animation: fire-ring-hover 2s ease-in-out infinite;
+   }
+}
+#air-ring-section {
+   animation: air-ring-intro 500ms ease-in-out;
+}
+#water-ring-section {
+   animation: water-ring-intro 500ms ease-in-out;
+}
+#void-ring-section {
+   animation: void-ring-intro 500ms ease-in-out;
+   &:hover {
+      animation: void-ring-hover 5s ease-in-out infinite;
+   }
+}
