@@ -175,6 +175,8 @@ export default class L5rCharacterSheet extends ActorSheet {
             Résultats détaillés : ${detailedResults}`;
 
          const chatData = {
+            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+
             user: game.user._id,
             speaker: ChatMessage.getSpeaker(),
             content: messageContent,
