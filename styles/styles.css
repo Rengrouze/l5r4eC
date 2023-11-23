@@ -236,6 +236,10 @@ body {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -341,7 +345,7 @@ body {
 }
 
 .m0 {
-  margin: 0;
+  margin: 0px;
 }
 
 .mb-0 {
@@ -1230,307 +1234,307 @@ body {
 
 /* no padding */
 .p-0 {
-  padding: 0;
+  padding: 0px;
 }
 
 .pb-1 {
-  margin-bottom: 1rem;
+  padding-bottom: 1px;
 }
 
 .pt-1 {
-  margin-top: 1rem;
+  padding-top: 1px;
 }
 
 .pl-1 {
-  margin-left: 1rem;
+  padding-left: 1px;
 }
 
 .pr-1 {
-  margin-right: 1rem;
+  padding-right: 1px;
 }
 
 .py-1 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 .px-1 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding: 1px;
+  padding: 1px;
 }
 
 .p-1 {
-  margin: 1rem;
+  padding: 1px;
 }
 
 .pb-2 {
-  margin-bottom: 2rem;
+  padding-bottom: 2px;
 }
 
 .pt-2 {
-  margin-top: 2rem;
+  padding-top: 2px;
 }
 
 .pl-2 {
-  margin-left: 2rem;
+  padding-left: 2px;
 }
 
 .pr-2 {
-  margin-right: 2rem;
+  padding-right: 2px;
 }
 
 .py-2 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .px-2 {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  padding: 2px;
+  padding: 2px;
 }
 
 .p-2 {
-  margin: 2rem;
+  padding: 2px;
 }
 
 .pb-3 {
-  margin-bottom: 3rem;
+  padding-bottom: 3px;
 }
 
 .pt-3 {
-  margin-top: 3rem;
+  padding-top: 3px;
 }
 
 .pl-3 {
-  margin-left: 3rem;
+  padding-left: 3px;
 }
 
 .pr-3 {
-  margin-right: 3rem;
+  padding-right: 3px;
 }
 
 .py-3 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .px-3 {
-  margin-left: 3rem;
-  margin-right: 3rem;
+  padding: 3px;
+  padding: 3px;
 }
 
 .p-3 {
-  margin: 3rem;
+  padding: 3px;
 }
 
 .pb-4 {
-  margin-bottom: 4rem;
+  padding-bottom: 4px;
 }
 
 .pt-4 {
-  margin-top: 4rem;
+  padding-top: 4px;
 }
 
 .pl-4 {
-  margin-left: 4rem;
+  padding-left: 4px;
 }
 
 .pr-4 {
-  margin-right: 4rem;
+  padding-right: 4px;
 }
 
 .py-4 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .px-4 {
-  margin-left: 4rem;
-  margin-right: 4rem;
+  padding: 4px;
+  padding: 4px;
 }
 
 .p-4 {
-  margin: 4rem;
+  padding: 4px;
 }
 
 .pb-5 {
-  margin-bottom: 5rem;
+  padding-bottom: 5px;
 }
 
 .pt-5 {
-  margin-top: 5rem;
+  padding-top: 5px;
 }
 
 .pl-5 {
-  margin-left: 5rem;
+  padding-left: 5px;
 }
 
 .pr-5 {
-  margin-right: 5rem;
+  padding-right: 5px;
 }
 
 .py-5 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .px-5 {
-  margin-left: 5rem;
-  margin-right: 5rem;
+  padding: 5px;
+  padding: 5px;
 }
 
 .p-5 {
-  margin: 5rem;
+  padding: 5px;
 }
 
 .pb-6 {
-  margin-bottom: 6rem;
+  padding-bottom: 6px;
 }
 
 .pt-6 {
-  margin-top: 6rem;
+  padding-top: 6px;
 }
 
 .pl-6 {
-  margin-left: 6rem;
+  padding-left: 6px;
 }
 
 .pr-6 {
-  margin-right: 6rem;
+  padding-right: 6px;
 }
 
 .py-6 {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .px-6 {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  padding: 6px;
+  padding: 6px;
 }
 
 .p-6 {
-  margin: 6rem;
+  padding: 6px;
 }
 
 .pb-7 {
-  margin-bottom: 7rem;
+  padding-bottom: 7px;
 }
 
 .pt-7 {
-  margin-top: 7rem;
+  padding-top: 7px;
 }
 
 .pl-7 {
-  margin-left: 7rem;
+  padding-left: 7px;
 }
 
 .pr-7 {
-  margin-right: 7rem;
+  padding-right: 7px;
 }
 
 .py-7 {
-  margin-top: 7rem;
-  margin-bottom: 7rem;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 .px-7 {
-  margin-left: 7rem;
-  margin-right: 7rem;
+  padding: 7px;
+  padding: 7px;
 }
 
 .p-7 {
-  margin: 7rem;
+  padding: 7px;
 }
 
 .pb-8 {
-  margin-bottom: 8rem;
+  padding-bottom: 8px;
 }
 
 .pt-8 {
-  margin-top: 8rem;
+  padding-top: 8px;
 }
 
 .pl-8 {
-  margin-left: 8rem;
+  padding-left: 8px;
 }
 
 .pr-8 {
-  margin-right: 8rem;
+  padding-right: 8px;
 }
 
 .py-8 {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .px-8 {
-  margin-left: 8rem;
-  margin-right: 8rem;
+  padding: 8px;
+  padding: 8px;
 }
 
 .p-8 {
-  margin: 8rem;
+  padding: 8px;
 }
 
 .pb-9 {
-  margin-bottom: 9rem;
+  padding-bottom: 9px;
 }
 
 .pt-9 {
-  margin-top: 9rem;
+  padding-top: 9px;
 }
 
 .pl-9 {
-  margin-left: 9rem;
+  padding-left: 9px;
 }
 
 .pr-9 {
-  margin-right: 9rem;
+  padding-right: 9px;
 }
 
 .py-9 {
-  margin-top: 9rem;
-  margin-bottom: 9rem;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .px-9 {
-  margin-left: 9rem;
-  margin-right: 9rem;
+  padding: 9px;
+  padding: 9px;
 }
 
 .p-9 {
-  margin: 9rem;
+  padding: 9px;
 }
 
 .pb-10 {
-  margin-bottom: 10rem;
+  padding-bottom: 10px;
 }
 
 .pt-10 {
-  margin-top: 10rem;
+  padding-top: 10px;
 }
 
 .pl-10 {
-  margin-left: 10rem;
+  padding-left: 10px;
 }
 
 .pr-10 {
-  margin-right: 10rem;
+  padding-right: 10px;
 }
 
 .py-10 {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .px-10 {
-  margin-left: 10rem;
-  margin-right: 10rem;
+  padding: 10px;
+  padding: 10px;
 }
 
 .p-10 {
-  margin: 10rem;
+  padding: 10px;
 }
 
 .top-0 {
@@ -11172,6 +11176,22 @@ body {
 
 .w-80px {
   width: 80px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-150px {
+  width: 150px;
+}
+
+.w-135px {
+  width: 135px;
+}
+
+.w-140px {
+  width: 140px;
 }
 
 #earth-stats-table {

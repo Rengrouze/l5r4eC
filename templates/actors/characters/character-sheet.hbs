@@ -7,25 +7,23 @@
    <div class="separator"></div>
 
    <div class="mb-100 flex flex-row justify-between">
-      <div class="flex flex-col">
-         <table id="earth-stats-table">
-            <tr>
-               <th class="rings-traits"><h2 class="text-earth rings-traits no-borders m0">{{localize "l5r4ec.rings.earth"}}</h2></th>
-               <th><img
+      <div class="flex flex-col w-140px">
+         <div class="flex flex-col mb-20" id="earth-stats-table">
+            <div class="flex rings-traits w-full justify-around mt-5">
+               <h2 class="text-earth rings-traits no-borders m0">{{localize "l5r4ec.rings.earth"}}</h2>
+               <img
                      src="/systems/l5r4ec/assets/icons/rings/earth.svg"
                      alt="le symbole de l'anneau de la terre"
                      height="32"
                      width="32"
                      class="no-borders"
-                  /></th>
-            </tr>
-            <tr>
-               <td>
-                  
+                  />
+            </div>
+            <div class="flex justify-between w-full align-center my-5 px-4">
+
                   <button class="roll-dice mr-3" data-name="stamina" data-value="{{data.traits.stamina}}" data-roll-type="trait">{{localize "l5r4ec.traits.stamina"}}</button>
-                  
-               </td>
-               <td><div id="traits-inputs-earth">
+
+               <div id="traits-inputs-earth">
                      <input
                         type="number"
                         name="data.traits.stamina"
@@ -35,13 +33,13 @@
                         placeholder="0"
                      />
                   </div>
-               </td>
-            </tr>
-            <tr>
-               <td>
-                  {{localize "l5r4ec.traits.willpower"}}
-               </td>
-               <td><div id="traits-inputs-earth">
+               
+            </div>
+            <div class="flex justify-between w-full align-center my-5 px-4">
+               <button class="roll-dice mr-3" data-name="willpower" data-value="{{data.traits.willpower}}" data-roll-type="trait">{{localize "l5r4ec.traits.willpower"}}</button>
+                  
+               
+               <div id="traits-inputs-earth">
                      <input
                         type="number"
                         name="data.traits.willpower"
@@ -51,11 +49,57 @@
                         placeholder="0"
                      />
                   </div>
-               </td>
-            </tr>
-         </table>
+               
+            </div>
+         </div>
+         <!-- remake the water stat by using the same template -->
+         <div class="flex flex-col mb-20" id="water-stats-table">
+   <div class="flex rings-traits w-full justify-around mt-5">
+      <h2 class="text-water rings-traits no-borders m0">{{localize "l5r4ec.rings.water"}}</h2>
+      <img
+         src="/systems/l5r4ec/assets/icons/rings/water.svg"
+         alt="le symbole de l'anneau de l'eau"
+         height="32"
+         width="32"
+         class="no-borders"
+      />
+   </div>
+   <div class="flex justify-between w-full align-center my-5 px-4">
+      <button class="roll-dice mr-3" data-name="strength" data-value="{{data.traits.strength}}" data-roll-type="trait">{{localize "l5r4ec.traits.strength"}}</button>
+      <div id="traits-inputs-water">
+         <input
+            type="number"
+            name="data.traits.strength"
+            value="{{data.traits.strength}}"
+            data-type="Number"
+            min="0"
+            placeholder="0"
+         />
+      </div>
+   </div>
+   <div class="flex justify-between w-full align-center my-5 px-4">
+      <button class="roll-dice mr-3" data-name="perception" data-value="{{data.traits.perception}}" data-roll-type="trait">{{localize "l5r4ec.traits.perception"}}</button>
+         
+      
+      <div id="traits-inputs-water">
+         <input
+            type="number"
+            name="data.traits.perception"
+            value="{{data.traits.perception}}"
+            data-type="Number"
+            min="0"
+            placeholder="0"
+         />
+      </div>
+   </div>
+</div>
 
-         <table id="water-stats-table">
+
+
+
+
+
+        <!-- <table id="water-stats-table">
             <tr>
                <th class="rings-traits"><h2 class="text-water rings-traits no-borders m0">{{localize "l5r4ec.rings.water"}}</h2></th>
                <th><img
@@ -129,7 +173,7 @@
                </td>
                </div>
             </tr>
-         </table>
+         </table> -->
       </div>
 
       <div id="rings-section" class="flex flex-col text-xl bold justify-center align-center"><ul class="p-0">
@@ -263,21 +307,21 @@
 
             </li>
          </ul></div>
-      <div class="flex flex-col">
-         <table id="air-stats-table">
-            <tr>
-               <th class="rings-traits"><h2 class="text-air rings-traits no-borders m0">{{localize "l5r4ec.rings.air"}}</h2></th>
-               <th><img
+      <div class="flex flex-col w-140px">
+         <div class="flex flex-col mb-20" id="air-stats-table">
+            <div class="flex rings-traits w-full justify-around mt-5">
+              <h2 class="text-air rings-traits no-borders m0">{{localize "l5r4ec.rings.air"}}</h2>
+               <img
                      src="/systems/l5r4ec/assets/icons/rings/air.svg"
                      alt="le symbole de l'anneau de l'air"
                      height="32"
                      width="32"
                      class="no-borders"
-                  /></th>
+                  />
 
-            </tr>
-            <tr>
-               <td><div id="traits-inputs-air">
+            </div>
+            <div class="flex justify-between w-full align-center my-5 px-4">
+               <div id="traits-inputs-air">
                      <input
                         type="number"
                         name="data.traits.reflexes"
@@ -287,13 +331,11 @@
                         placeholder="0"
                      />
                   </div>
-               </td>
-               <td>
-                  {{localize "l5r4ec.traits.reflexes"}}
-               </td>
-            </tr>
-            <tr>
-               <td><div id="traits-inputs-air">
+               
+               <button class="roll-dice mr-3" data-name="reflexes" data-value="{{data.traits.reflexes}}" data-roll-type="trait">{{localize "l5r4ec.traits.reflexes"}}</button>
+            </div>
+            <div class="flex justify-between w-full align-center my-5 px-4">
+               <div id="traits-inputs-air">
                      <input
                         type="number"
                         name="data.traits.awareness"
@@ -303,26 +345,26 @@
                         placeholder="0"
                      />
                   </div>
-               </td>
-               <td>
-                  {{localize "l5r4ec.traits.awareness"}}
-               </td>
-            </tr>
-         </table>
+               
+               <button class="roll-dice mr-3" data-name="awareness" data-value="{{data.traits.awareness}}" data-roll-type="trait">{{localize "l5r4ec.traits.awareness"}}</button>
+                  
+            </div>
+         </div>
 
-         <table id="fire-stats-table">
-            <tr>
-               <th class="rings-traits"><h2 class="text-fire rings-traits no-borders m0">{{localize "l5r4ec.rings.fire"}}</h2></th>
-               <th><img
+         <div class="flex flex-col " id="fire-stats-table">
+            <div class="flex rings-traits w-full justify-around mt-5">
+               <h2 class="text-fire rings-traits no-borders m0">{{localize "l5r4ec.rings.fire"}}</h2></th>
+               <img
                      src="/systems/l5r4ec/assets/icons/rings/fire.svg"
                      alt="le symbole de l'anneau du feu"
                      height="32"
                      width="32"
                      class="no-borders"
-                  /></th>
-            </tr>
-            <tr>
-               <td><div id="traits-inputs-fire">
+                  />
+            </div>
+            
+            <div class="flex justify-between w-full align-center my-5 px-4">
+               <div id="traits-inputs-fire">
                      <input
                         type="number"
                         name="data.traits.agility"
@@ -331,14 +373,13 @@
                         min="0"
                         placeholder="0"
                      />
-                  </div>
-               </td>
-               <td>
-                  {{localize "l5r4ec.traits.agility"}}
-               </td>
-            </tr>
-            <tr>
-               <td><div id="traits-inputs-fire">
+               </div>
+               <button class="roll-dice mr-3" data-name="agility" data-value="{{data.traits.agility}}" data-roll-type="trait">{{localize "l5r4ec.traits.agility"}}</button>
+                  
+            </div>
+            
+            <div class="flex justify-between w-full align-center my-5 px-4">
+               <div id="traits-inputs-fire">
                      <input
                         type="number"
                         name="data.traits.intelligence"
@@ -348,12 +389,11 @@
                         placeholder="0"
                      />
                   </div>
-               </td>
-               <td>
-                  {{localize "l5r4ec.traits.intelligence"}}
-               </td>
-            </tr>
-         </table>
+               
+               <button class="roll-dice mr-3" data-name="intelligence" data-value="{{data.traits.intelligence}}" data-roll-type="trait">{{localize "l5r4ec.traits.intelligence"}}</button>
+                
+            </div>
+         </div>
       </div>
    </div>
    <div>
@@ -382,11 +422,7 @@
                         placeholder="0"
                      /></td>
                       <td>
-                        <select name="data.skills.weapon.kenjutsu">
-                           <option value="reflexes">Reflexes</option>
-                           <option value="agility">Agility</option>
-                           <option value="void">Void</option>
-                        </select>
+                       
 
                      </td>
          </tr>
