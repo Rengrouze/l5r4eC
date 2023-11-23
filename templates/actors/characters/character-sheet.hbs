@@ -21,7 +21,8 @@
             </tr>
             <tr>
                <td>
-                  {{localize "l5r4ec.traits.stamina"}}
+                  
+                  <button class="roll-dice mr-3" data-name="stamina" data-value="{{data.traits.stamina}}" data-roll-type="trait">{{localize "l5r4ec.traits.stamina"}}</button>
                   
                </td>
                <td><div id="traits-inputs-earth">
@@ -354,6 +355,43 @@
             </tr>
          </table>
       </div>
+   </div>
+   <div>
+      <table>
+         <!-- make a skill table -->
+         <tr>
+         <th>
+            Skills :
+         </th>
+         <th>
+            level :
+         </th>
+         <th>
+          Stat used : 
+         </th> 
+         </tr>
+         <tr>
+            <td><button class="roll-dice mr-3" data-roll-type="skill">Kenjutsu</button>
+                  </td>
+            <td><input
+                        type="number"
+                        name="data.skills.weapon.kenjutsu"
+                        value="{{data.skills.weapon.kenjutsu}}"
+                        data-type="Number"
+                        min="0"
+                        placeholder="0"
+                     /></td>
+                      <td>
+                        <select name="data.skills.weapon.kenjutsu">
+                           <option value="reflexes">Reflexes</option>
+                           <option value="agility">Agility</option>
+                           <option value="void">Void</option>
+                        </select>
+
+                     </td>
+         </tr>
+
+      </table>
    </div>
 
    <div>

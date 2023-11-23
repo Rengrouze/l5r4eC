@@ -19,6 +19,7 @@ export default class L5rCharacterSheet extends ActorSheet {
          config: CONFIG.l5r4ec,
          items: baseData.items,
       };
+
       await this._updateRingLevels(sheetData.data.rings, sheetData.data.traits);
       console.log(sheetData);
       console.log(sheetData.data.rings.air);
@@ -58,15 +59,65 @@ export default class L5rCharacterSheet extends ActorSheet {
    }
 
    async _onRollDice(event) {
-      const stat = event.currentTarget.dataset.stat;
-      const statValue = this.actor.system.rings[stat];
-      const rollType = event.currentTarget.dataset.rollType; // Ajouter un attribut rollType au bouton HTML
-      const rollResult = await this._rollAndKeepDice(statValue, statValue, rollType);
-      this._displayRollResult(stat, rollResult, statValue);
+      console.log(event.currentTarget.dataset);
+      const rollType = event.currentTarget.dataset.rollType;
+      const stat = event.currentTarget.dataset.name;
+
+      const statValue = event.currentTarget.dataset.value;
+
+      let rollResult; // Déclarer rollResult en dehors des conditions
+      let keep; // Déclarer keep ici
+
+      if (rollType === "trait") {
+         // Recherche du niveau de trait dans les données
+         const traitLevel = parseInt(statValue); // Assurez-vous de convertir en nombre
+
+         // Définir les valeurs de jet et de conservation
+         let roll = traitLevel;
+         keep = traitLevel; // Définir keep ici
+
+         // Effectuer le jet de dés
+         rollResult = await this._rollDice(roll, keep);
+      } else if (rollType === "ring") {
+         const ringLevel = this.actor.system.rings[stat]; // Utiliser 'rings' au lieu de 'ring'
+         let roll = ringLevel;
+         keep = ringLevel; // Définir keep ici
+
+         // Effectuer le jet de dés
+         rollResult = await this._rollDice(roll, keep);
+      } else if (rollType === "skill") {
+         const skillLevel = this.actor.system.skills[stat];
+         const traitLevel = 5;
+         let roll = skillLevel + traitLevel;
+
+         if (roll > 10) {
+            surplus = roll - 10;
+            roll = 10;
+            console.log(surplus);
+         }
+
+         // Effectuer le jet de dés
+         rollResult = await this._rollDice(roll, keep); // Ajouter 'keep' ici
+      } else {
+         // Si le type de jet de dés n'est pas défini comme prévu
+         console.error("Le type de jet de dés n'est pas défini comme prévu.");
+      }
+
+      // Afficher le résultat du jet dans la console
+      console.log("Roll Result:", rollResult);
+
+      // Afficher le résultat du jet dans l'interface utilisateur
+      this._displayRollResult(stat, rollResult, keep);
    }
 
-   async _rollAndKeepDice(roll, keep, rollType) {
-      const rollFormula = rollType === "competence" ? `${roll}d10kl${keep}` : `${roll}d10kh${keep}`;
+   async _rollDice(roll, keep) {
+      const rollResult = await this._rollAndKeepDice(roll, keep);
+
+      return rollResult;
+   }
+
+   async _rollAndKeepDice(roll, keep) {
+      const rollFormula = `${roll}d10kh${keep}`;
 
       const rollResult = await new Roll(rollFormula).evaluate({ async: true });
 
