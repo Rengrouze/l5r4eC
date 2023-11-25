@@ -20,27 +20,28 @@ export default class L5rCharacterSheet extends ActorSheet {
          items: baseData.items,
       };
 
+      sheetData.data.clans = Array.from(CONFIG.l5r4ec.clans).map(([id]) => id);
+      // console.log the selected clan
+      console.log(sheetData.data.clan);
+
       await this._updateRingLevels(sheetData.data.rings, sheetData.data.traits);
-      console.log(sheetData);
-      console.log(sheetData.data.rings.air);
-      console.log(sheetData.data.rings.earth);
-      console.log(sheetData.data.rings.fire);
-      console.log(sheetData.data.rings.water);
-      console.log(sheetData.data.rings.void);
+      await this._updateArmorTn(sheetData.data);
+
+      await this._updateReputation(sheetData.data.rings, sheetData.data.skills, sheetData.data.insight);
+      await this._updateInsight(sheetData.data.insight);
+      console.log(sheetData.data);
       return sheetData;
    }
 
    async _updateRingLevels(rings, traits) {
       // Obtient les niveaux de tous les traits associés aux anneaux
 
-      console.log(traits);
       const traitLevels = {
          water: Math.min(traits.strength, traits.perception),
          earth: Math.min(traits.stamina, traits.willpower),
          fire: Math.min(traits.agility, traits.intelligence),
          air: Math.min(traits.awareness, traits.reflexes),
       };
-      console.log(traitLevels);
 
       // Met à jour les niveaux des anneaux en fonction des niveaux des traits associés
       for (const [ring] of Object.entries(rings)) {
@@ -49,6 +50,57 @@ export default class L5rCharacterSheet extends ActorSheet {
             rings[ring] = traitLevels[ring];
          }
       }
+   }
+   async _updateArmorTn(data) {
+      // Calculer la TN de l'armure
+      data.armor.natural = data.traits.reflexes * 5;
+      // add armor TN to base TN
+      data.armor.current = data.armor.natural + data.armor.armorMod + data.armor.otherMod;
+
+      // Ajouter la TN de l'armure à la TN de base
+   }
+   async _updateReputation(rings, skills, reputation) {
+      //
+      reputation.points = 0;
+
+      // Calculer les niveaux d'anneaux
+      for (const [ring] of Object.entries(rings)) {
+         reputation.points += rings[ring] * 10;
+      }
+
+      // Parcourir les compétences et ajouter les niveaux de compétence
+      const skillCategories = ["high", "bugei", "low", "merchant", "weapon"];
+      for (const category of skillCategories) {
+         for (const [skill] of Object.entries(skills[category])) {
+            reputation.points += skills[category][skill];
+         }
+      }
+
+      console.log(reputation.points);
+   }
+
+   async _updateInsight(insight) {
+      insight.rank = 0;
+      if (insight.points >= 1 && insight.points <= 149) {
+         insight.rank = 1;
+      } else if (insight.points >= 150 && insight.points <= 174) {
+         insight.rank = 2;
+      } else if (insight.points >= 175 && insight.points <= 199) {
+         insight.rank = 3;
+      } else if (insight.points >= 200 && insight.points <= 224) {
+         insight.rank = 4;
+      } else if (insight.points >= 225 && insight.points <= 249) {
+         insight.rank = 5;
+      } else if (insight.points >= 250 && insight.points <= 274) {
+         insight.rank = 6;
+      } else if (insight.points >= 275 && insight.points <= 299) {
+         insight.rank = 7;
+      } else {
+         // Calculer le rang supplémentaire pour chaque tranche de 25 points au-dessus de 300
+         const additionalRanks = Math.floor((reputation - 300) / 25);
+         insight.rank = 8 + additionalRanks;
+      }
+      console.log(insight);
    }
 
    activateListeners(html) {

@@ -31,6 +31,27 @@
       },
       "voidPoints": "Points de Vide",
       "maxVoidPoints": "Maximum",
-      "spentVoidPoints": "Dépensés"
+      "spentVoidPoints": "Dépensés",
+      "insight": "Rang",
+      "reputation": "Réputation",
+      "xp": {
+         "available": "Points d'expériences",
+         "total": "Total des points"
+      },
+      "clans": {
+         "crab": "Crabe",
+         "crane": "Grue",
+         "dragon": "Dragon",
+         "lion": "Lion",
+         "phoenix": "Phénix",
+         "scorpion": "Scorpion",
+         "unicorn": "Licorne",
+         "minor": "Mineur",
+         "ronin": "Ronin",
+         "imperial": "Impérial",
+         "spider": "Araignée",
+         "mantis": "Mante",
+         "other": "Autre"
+      }
    }
 }

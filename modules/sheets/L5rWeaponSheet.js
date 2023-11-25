@@ -18,10 +18,11 @@ export default class L5rWeaponSheet extends ItemSheet {
          data: baseData.item.system,
          config: CONFIG.l5r4ec,
       };
-
+      console.log(sheetData);
       // Martial skills only
       sheetData.data.skills = Array.from(CONFIG.l5r4ec.skills).map(([id]) => id);
-      console.log(sheetData);
+
+      // send in console the selected skill
 
       return sheetData;
    }

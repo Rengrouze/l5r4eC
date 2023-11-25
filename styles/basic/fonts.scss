@@ -34,8 +34,26 @@ body {
 }
 */
 #rings-section {
-   font-family: "BrushtipTexe", sans-serif;
+   button {
+      font-family: "BrushtipTexe", sans-serif;
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 1.5em;
+      margin-top: 15px;
+
+      &:hover {
+         border: none;
+         outline: none;
+         // remove default styles
+         text-decoration: none;
+         color: inherit;
+         background: none;
+         cursor: pointer;
+      }
+   }
 }
+
 .rings-traits h2 {
    font-family: "BrushtipTexe", sans-serif;
 }

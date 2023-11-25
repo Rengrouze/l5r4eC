@@ -11,11 +11,15 @@ export const RegisterHandlebars = function () {
    Handlebars.registerHelper("localizeSkillId", function (skillId) {
       const key = "l5r4ec.skills." + CONFIG.l5r4ec.skills.get(skillId.toLowerCase()) + "." + skillId.toLowerCase();
       console.log(key);
-      console.log(game.i18n.localize(key));
       return sanitizeIfFail(game.i18n.localize(key));
    });
    Handlebars.registerHelper("localizeRing", function (ringId) {
       const key = "l5r4ec.rings." + ringId.toLowerCase();
+      return sanitizeIfFail(game.i18n.localize(key));
+   });
+   Handlebars.registerHelper("localizeClan", function (clanId) {
+      const key = "l5r4ec.clans." + clanId.toLowerCase();
+      console.log(key);
       return sanitizeIfFail(game.i18n.localize(key));
    });
 };

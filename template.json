@@ -126,8 +126,12 @@
                }
             },
             "armor": {
-               "armor_tn": 0,
-               "reduction": 0
+               "type": "",
+               "reduction": 0,
+               "natural": 0,
+               "current": 0,
+               "armorMod": 0,
+               "otherMod": 0
             },
             "notes": ""
          }
@@ -168,8 +172,9 @@
             "spend": 0
          },
 
-         "xp": 0,
-         "clan": "",
+         "xp": 40,
+         "total_xp": 40,
+         "clans": "",
          "school": "",
          "honor": {
             "rank": 2,
@@ -185,25 +190,22 @@
          },
          "shadow_taint": {
             "rank": 0,
-            "points": 0
+            "points": 0,
+            "visible": false
          },
          "initiative": {
             "roll": 2,
             "keep": 2,
             "roll_mod": 0,
             "keep_mod": 0,
-            "total_mod": 0
+            "total_mod": 0,
+            "current": 0
          },
          "insight": {
             "rank": 1,
             "points": 0
          },
-         "armor_tn": {
-            "type": "",
-            "reduction": 0,
-            "current": 0,
-            "mod": 0
-         },
+
          "woundsMod": 0,
          "wealth": {
             "koku": 0,

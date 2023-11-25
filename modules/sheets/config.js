@@ -17,3 +17,18 @@ l5r4ec.rings.set("water", "ring");
 l5r4ec.rings.set("fire", "ring");
 l5r4ec.rings.set("air", "ring");
 l5r4ec.rings.set("void", "ring");
+
+l5r4ec.clans = new Map();
+l5r4ec.clans.set("crab", "clan");
+l5r4ec.clans.set("crane", "clan");
+l5r4ec.clans.set("dragon", "clan");
+l5r4ec.clans.set("lion", "clan");
+l5r4ec.clans.set("phoenix", "clan");
+l5r4ec.clans.set("scorpion", "clan");
+l5r4ec.clans.set("unicorn", "clan");
+l5r4ec.clans.set("spider", "clan");
+l5r4ec.clans.set("mantis", "clan");
+l5r4ec.clans.set("imperial", "clan");
+l5r4ec.clans.set("minor", "clan");
+l5r4ec.clans.set("ronin", "clan");
+l5r4ec.clans.set("other", "clan");

@@ -24,8 +24,21 @@ body {
    font-family: "ArchitectsDaughter", sans-serif;
 }
 */
-#rings-section {
+#rings-section button {
   font-family: "BrushtipTexe", sans-serif;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1.5em;
+  margin-top: 15px;
+}
+#rings-section button:hover {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  cursor: pointer;
 }
 
 .rings-traits h2 {
@@ -34,6 +47,7 @@ body {
 
 /* text colors */
 /* Rings */
+/* clan colors */
 .no-borders {
   border: none;
 }
@@ -55,8 +69,25 @@ body {
   font-size: larger !important;
   z-index: 1 !important;
   padding: auto !important;
-  right: 5px !important;
-  bottom: 5px !important;
+  right: 8px !important;
+  bottom: 10px !important;
+}
+
+#ring-inputs-air input {
+  border: 3px solid #917896 !important;
+  border-radius: 100% !important;
+  background-color: white !important;
+  color: #917896 !important;
+  outline: none !important;
+  position: absolute !important;
+  width: 38px !important;
+  height: 38px !important;
+  text-align: center !important;
+  font-size: larger !important;
+  z-index: 1 !important;
+  padding: auto !important;
+  bottom: 10px !important;
+  left: 8px !important;
 }
 
 #ring-inputs-water input {
@@ -91,23 +122,6 @@ body {
   padding: auto !important;
   top: 25px !important;
   left: -5px !important;
-}
-
-#ring-inputs-air input {
-  border: 3px solid #917896 !important;
-  border-radius: 100% !important;
-  background-color: white !important;
-  color: #917896 !important;
-  outline: none !important;
-  position: absolute !important;
-  width: 38px !important;
-  height: 38px !important;
-  text-align: center !important;
-  font-size: larger !important;
-  z-index: 1 !important;
-  padding: auto !important;
-  bottom: 5px !important;
-  left: 5px !important;
 }
 
 #ring-inputs-void input {
@@ -186,6 +200,110 @@ body {
   font-size: larger !important;
 }
 
+.crab-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #292768 !important;
+  border-radius: 10px !important;
+}
+
+.crane-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #68c2d4 !important;
+  border-radius: 10px !important;
+}
+
+.dragon-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #55826e !important;
+  border-radius: 10px !important;
+}
+
+.lion-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #d9c23e !important;
+  border-radius: 10px !important;
+}
+
+.phoenix-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #ff8b01 !important;
+  border-radius: 10px !important;
+}
+
+.scorpion-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #a33e3e !important;
+  border-radius: 10px !important;
+}
+
+.unicorn-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #742074 !important;
+  border-radius: 10px !important;
+}
+
+.minor-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #b7b7b7 !important;
+  border-radius: 10px !important;
+}
+
+.ronin-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #b7b7b7 !important;
+  border-radius: 10px !important;
+}
+
+.imperial-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #00a36c !important;
+  border-radius: 10px !important;
+}
+
+.spider-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #000000 !important;
+  border-radius: 10px !important;
+}
+
+.mantis-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #3d9900 !important;
+  border-radius: 10px !important;
+}
+
+.other-inputs {
+  background-color: white !important;
+  color: black !important;
+  border: 3px solid #b7b7b7 !important;
+  border-radius: 10px !important;
+}
+
+#insight_rank {
+  width: 60px;
+  height: 60px;
+  border-radius: 100% !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  border: 3px solid #4b4641;
+  background-color: white;
+  text-align: center;
+  min-width: 60px;
+}
+
 /* flexbox */
 .flex {
   display: flex;
@@ -238,6 +356,10 @@ body {
 
 .justify-around {
   justify-content: space-around;
+}
+
+.flex-1 {
+  flex: 1;
 }
 
 .bold {
@@ -11170,6 +11292,14 @@ body {
   left: -300px;
 }
 
+.w-20px {
+  width: 20px;
+}
+
+.w-60px {
+  width: 60px;
+}
+
 .w-64px {
   width: 64px;
 }
@@ -11192,6 +11322,14 @@ body {
 
 .w-140px {
   width: 140px;
+}
+
+.h-100px {
+  height: 100px;
+}
+
+.h-auto {
+  height: auto;
 }
 
 #earth-stats-table {
@@ -11237,6 +11375,11 @@ body {
   border-radius: 10%;
   padding-left: 2px;
   padding-right: 2px;
+}
+
+#actor_img {
+  width: 200px;
+  height: 200px;
 }
 
 .separator {

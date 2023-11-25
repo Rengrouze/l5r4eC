@@ -13,9 +13,26 @@
 
    padding: auto !important;
 
-   right: 5px !important;
-   bottom: 5px !important;
+   right: 8px !important;
+   bottom: 10px !important;
 }
+#ring-inputs-air input {
+   border: 3px solid $air-ring !important;
+   border-radius: 100% !important;
+   background-color: white !important;
+   color: $air-ring !important;
+   outline: none !important;
+   position: absolute !important;
+   width: 38px !important;
+   height: 38px !important;
+   text-align: center !important;
+   font-size: larger !important;
+   z-index: 1 !important;
+   padding: auto !important;
+   bottom: 10px !important;
+   left: 8px !important;
+}
+
 #ring-inputs-water input {
    border: 3px solid $water-ring !important;
    border-radius: 100% !important;
@@ -49,22 +66,7 @@
    top: 25px !important;
    left: -5px !important;
 }
-#ring-inputs-air input {
-   border: 3px solid $air-ring !important;
-   border-radius: 100% !important;
-   background-color: white !important;
-   color: $air-ring !important;
-   outline: none !important;
-   position: absolute !important;
-   width: 38px !important;
-   height: 38px !important;
-   text-align: center !important;
-   font-size: larger !important;
-   z-index: 1 !important;
-   padding: auto !important;
-   bottom: 5px !important;
-   left: 5px !important;
-}
+
 #ring-inputs-void input {
    border: 3px solid $void-ring !important;
    border-radius: 100% !important;
@@ -140,4 +142,97 @@
    height: 38px !important;
    text-align: center !important;
    font-size: larger !important;
+}
+
+.crab-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $crab !important;
+   border-radius: 10px !important;
+}
+
+.crane-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $crane !important;
+   border-radius: 10px !important;
+}
+.dragon-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $dragon !important;
+   border-radius: 10px !important;
+}
+.lion-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $lion !important;
+   border-radius: 10px !important;
+}
+.phoenix-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $phoenix !important;
+   border-radius: 10px !important;
+}
+.scorpion-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $scorpion !important;
+   border-radius: 10px !important;
+}
+.unicorn-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $unicorn !important;
+   border-radius: 10px !important;
+}
+.minor-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $minor !important;
+   border-radius: 10px !important;
+}
+.ronin-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $ronin !important;
+   border-radius: 10px !important;
+}
+.imperial-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $imperial !important;
+   border-radius: 10px !important;
+}
+.spider-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $spider !important;
+   border-radius: 10px !important;
+}
+.mantis-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $mantis !important;
+   border-radius: 10px !important;
+}
+.other-inputs {
+   background-color: white !important;
+   color: black !important;
+   border: 3px solid $other !important;
+   border-radius: 10px !important;
+}
+
+#insight_rank {
+   width: 60px;
+   height: 60px;
+   border-radius: 100% !important;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0;
+   border: 3px solid $void-ring;
+   background-color: white;
+   text-align: center;
+   min-width: 60px;
 }
