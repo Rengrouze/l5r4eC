@@ -1,4 +1,4 @@
-$padding-values: 1 2 3 4 5 6 7 8 9 10;
+$padding-values: 1 2 3 4 5 6 7 8 9 10 15 40;
 
 /* no padding */
 .p-0 {
@@ -25,8 +25,8 @@ $padding-values: 1 2 3 4 5 6 7 8 9 10;
          padding-bottom: #{$current-padding}px;
       }
       .px-#{$current-padding} {
-         padding: #{$current-padding}px;
-         padding: #{$current-padding}px;
+         padding-left: #{$current-padding}px;
+         padding-right: #{$current-padding}px;
       }
       .p-#{$current-padding} {
          padding: #{$current-padding}px;

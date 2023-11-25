@@ -21,15 +21,15 @@ export default class L5rCharacterSheet extends ActorSheet {
       };
 
       sheetData.data.clans = Array.from(CONFIG.l5r4ec.clans).map(([id]) => id);
+      sheetData.data.families = Array.from(CONFIG.l5r4ec.families).map(([id]) => id);
       // console.log the selected clan
-      console.log(sheetData.data.clan);
 
       await this._updateRingLevels(sheetData.data.rings, sheetData.data.traits);
       await this._updateArmorTn(sheetData.data);
 
       await this._updateReputation(sheetData.data.rings, sheetData.data.skills, sheetData.data.insight);
       await this._updateInsight(sheetData.data.insight);
-      console.log(sheetData.data);
+      console.log(sheetData);
       return sheetData;
    }
 
@@ -75,8 +75,6 @@ export default class L5rCharacterSheet extends ActorSheet {
             reputation.points += skills[category][skill];
          }
       }
-
-      console.log(reputation.points);
    }
 
    async _updateInsight(insight) {
@@ -100,7 +98,6 @@ export default class L5rCharacterSheet extends ActorSheet {
          const additionalRanks = Math.floor((reputation - 300) / 25);
          insight.rank = 8 + additionalRanks;
       }
-      console.log(insight);
    }
 
    activateListeners(html) {
@@ -108,6 +105,7 @@ export default class L5rCharacterSheet extends ActorSheet {
 
       // Écouteur d'événement pour les boutons de jet de dés
       html.find(".roll-dice").click((event) => this._onRollDice(event));
+      html.find(".char_tab").click((event) => this._changeTab(event));
    }
 
    async _onRollDice(event) {
@@ -264,5 +262,23 @@ export default class L5rCharacterSheet extends ActorSheet {
          console.error("Les résultats du jet de dés ne sont pas définis comme prévu.");
          return ""; // Retourne une chaîne vide en cas d'erreur
       }
+   }
+   _changeTab(event, clan) {
+      // Récupérer l'ID de l'onglet à afficher
+      const tabId = event.currentTarget.dataset.tab;
+
+      // Masquer tous les contenus d'onglet
+      const tabs = this.element.find(".char_tab-content");
+      tabs.hide();
+
+      // Supprimer la classe active de tous les onglets
+      this.element.find(".char_tab").removeClass("active");
+
+      // Afficher le contenu de l'onglet sélectionné
+      const selectedTab = this.element.find(`#${tabId}`);
+      selectedTab.show();
+
+      // Ajouter la classe active à l'onglet sélectionné
+      event.currentTarget.classList.add("active");
    }
 }

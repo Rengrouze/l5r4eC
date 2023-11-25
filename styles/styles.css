@@ -32,14 +32,6 @@ body {
   font-size: 1.5em;
   margin-top: 15px;
 }
-#rings-section button:hover {
-  border: none;
-  outline: none;
-  text-decoration: none;
-  color: inherit;
-  background: none;
-  cursor: pointer;
-}
 
 .rings-traits h2 {
   font-family: "BrushtipTexe", sans-serif;
@@ -48,6 +40,7 @@ body {
 /* text colors */
 /* Rings */
 /* clan colors */
+/* whit backgrounds */
 .no-borders {
   border: none;
 }
@@ -1381,8 +1374,8 @@ body {
 }
 
 .px-1 {
-  padding: 1px;
-  padding: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
 }
 
 .p-1 {
@@ -1411,8 +1404,8 @@ body {
 }
 
 .px-2 {
-  padding: 2px;
-  padding: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .p-2 {
@@ -1441,8 +1434,8 @@ body {
 }
 
 .px-3 {
-  padding: 3px;
-  padding: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .p-3 {
@@ -1471,8 +1464,8 @@ body {
 }
 
 .px-4 {
-  padding: 4px;
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .p-4 {
@@ -1501,8 +1494,8 @@ body {
 }
 
 .px-5 {
-  padding: 5px;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .p-5 {
@@ -1531,8 +1524,8 @@ body {
 }
 
 .px-6 {
-  padding: 6px;
-  padding: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .p-6 {
@@ -1561,8 +1554,8 @@ body {
 }
 
 .px-7 {
-  padding: 7px;
-  padding: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 .p-7 {
@@ -1591,8 +1584,8 @@ body {
 }
 
 .px-8 {
-  padding: 8px;
-  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .p-8 {
@@ -1621,8 +1614,8 @@ body {
 }
 
 .px-9 {
-  padding: 9px;
-  padding: 9px;
+  padding-left: 9px;
+  padding-right: 9px;
 }
 
 .p-9 {
@@ -1651,12 +1644,72 @@ body {
 }
 
 .px-10 {
-  padding: 10px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .p-10 {
   padding: 10px;
+}
+
+.pb-15 {
+  padding-bottom: 15px;
+}
+
+.pt-15 {
+  padding-top: 15px;
+}
+
+.pl-15 {
+  padding-left: 15px;
+}
+
+.pr-15 {
+  padding-right: 15px;
+}
+
+.py-15 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.px-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+.pb-40 {
+  padding-bottom: 40px;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+.pl-40 {
+  padding-left: 40px;
+}
+
+.pr-40 {
+  padding-right: 40px;
+}
+
+.py-40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.px-40 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.p-40 {
+  padding: 40px;
 }
 
 .top-0 {
@@ -11292,6 +11345,14 @@ body {
   left: -300px;
 }
 
+.w-auto {
+  width: auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
 .w-20px {
   width: 20px;
 }
@@ -11330,6 +11391,10 @@ body {
 
 .h-auto {
   height: auto;
+}
+
+.h-full {
+  height: 100%;
 }
 
 #earth-stats-table {
@@ -11377,9 +11442,55 @@ body {
   padding-right: 2px;
 }
 
+#actor_img_div {
+  width: 225px;
+  height: 225px;
+  margin-top: auto;
+  margin-bottom: auto;
+  overflow: hidden;
+}
+
 #actor_img {
-  width: 200px;
-  height: 200px;
+  width: 225px;
+  height: 225px;
+}
+
+#clan-images img {
+  width: 125px;
+  height: 125px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: none;
+  outline: none;
+}
+
+/* Style pour les onglets */
+.char_tabs {
+  display: flex;
+  cursor: pointer;
+}
+
+.char_tab {
+  padding: 10px;
+  margin: 5px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style pour les contenus d'onglet */
+.char_tab-content {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  display: none;
+}
+
+.char_tab.active {
+  border-bottom: 2px solid #68c2d4; /* Ligne de fond pour indiquer l'onglet actif */
+  color: #68c2d4; /* Couleur du texte pour l'onglet actif */
 }
 
 .separator {

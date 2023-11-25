@@ -41,16 +41,6 @@ body {
       outline: none;
       font-size: 1.5em;
       margin-top: 15px;
-
-      &:hover {
-         border: none;
-         outline: none;
-         // remove default styles
-         text-decoration: none;
-         color: inherit;
-         background: none;
-         cursor: pointer;
-      }
    }
 }
 

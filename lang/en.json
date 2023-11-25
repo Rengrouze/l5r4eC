@@ -39,6 +39,7 @@
          "total": "Total xp"
       },
       "clans": {
+         "clan": "Clan",
          "crab": "Crab",
          "crane": "Crane",
          "dragon": "Dragon",
@@ -52,6 +53,55 @@
          "spider": "Spider",
          "mantis": "Mantis",
          "other": "Other"
+      },
+      "families": {
+         "family": "Family",
+         "hida": "Hida",
+         "hiruma": "Hiruma",
+         "kaiu": "Kaiu",
+         "kuni": "Kuni",
+         "toritaka": "Toritaka",
+         "yasuki": "Yasuki",
+         "asahina": "Asahina",
+         "daidoji": "Daidoji",
+         "doji": "Doji",
+         "kakita": "Kakita",
+         "kitsuki": "Kitsuki",
+         "mirumoto": "Mirumoto",
+         "tamori": "Tamori",
+         "togashi": "Togashi",
+         "hoshi": "Hoshi",
+         "hitomi": "Hitomi",
+         "akodo": "Akodo",
+         "ikoma": "Ikoma",
+         "kitsu": "Kitsu",
+         "matsu": "Matsu",
+         "agasha": "Agasha",
+         "asako": "Asako",
+         "isawa": "Isawa",
+         "shiba": "Shiba",
+         "bayushi": "Bayushi",
+         "shosuro": "Shosuro",
+         "soshi": "Soshi",
+         "yogo": "Yogo",
+         "chuda": "Chuda",
+         "daigotsu": "Daigotsu",
+         "goju": "Goju",
+         "horiuchi": "Horiuchi",
+         "ide": "Ide",
+         "iuchi": "Iuchi",
+         "moto": "Moto",
+         "shinjo": "Shinjo",
+         "utaku": "Utaku",
+         "miya": "Miya",
+         "otomo": "Otomo",
+         "seppun": "Seppun",
+         "hantei": "Hantei",
+         "toturi": "Toturi",
+         "nasu": "Nasu"
+      },
+      "schools": {
+         "school": "School"
       }
    }
 }

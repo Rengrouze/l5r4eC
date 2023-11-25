@@ -1,0 +1,27 @@
+/* Style pour les onglets */
+.char_tabs {
+   display: flex;
+   cursor: pointer;
+}
+
+.char_tab {
+   padding: 10px;
+   margin: 5px;
+   background-color: #eee;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+/* Style pour les contenus d'onglet */
+.char_tab-content {
+   margin-top: 10px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #f9f9f9;
+   display: none;
+}
+.char_tab.active {
+   border-bottom: 2px solid $crane; /* Ligne de fond pour indiquer l'onglet actif */
+   color: $crane; /* Couleur du texte pour l'onglet actif */
+}

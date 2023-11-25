@@ -1,27 +1,42 @@
-<form class="{{cssClass}}" autocomplete="off">
+<form class="{{cssClass}} background-paper" autocomplete="off">
    <header class="sheet-header flex flex-col ">
-      <div class="w-full flex justify-between"><img id="actor_img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="250" width="250" />
-         <div class="flex flex-col flex-1 ">
+      <div class="w-full flex justify-between ">
+         <div id="actor_img_div" class="flex align-center justify-center"><img id="actor_img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="250" width="250" /></div>
+         
+         <div class="flex flex-col flex-1 justify-center px-15">
             <div class="flex flex-col justify-between">
             <h1>
                <input class="{{data.clan}}-inputs" name="name" type="text" value="{{actor.name}}" placeholder="Name" />
             </h1>
-               <div class="flex">
+            <div class="flex justify-around">
+               <div class="flex flex-col flex-1">
                   <div class="flex flex-col">
-                     <label for="data.clans">Clan</label>
+                     <label for="data.clans">{{localize "l5r4ec.clans.clan"}}</label>
                      <select class="{{data.clan}}-inputs" name="data.clan">
                   {{#each data.clans as |id cat|}}
                      <option value="{{id}}" {{#if (eq id ../data.clan)}}selected{{/if}}>{{localizeClan id}}</option>
                   {{/each}}
-               </select>
+                     </select>
                   </div>
-                <div class="flex flex-col">
-                  <label for="test">school</label>
+                  <div class="flex flex-col">
+                  <label for="test">{{localize "l5r4ec.families.family"}}</label>
+                  <select class="{{data.clan}}-inputs" name="data.family">
+                  {{#each data.families as |id cat|}}
+                     <option value="{{id}}" {{#if (eq id ../data.family)}}selected{{/if}}>{{localizeFamily id}}</option>
+                  {{/each}}
+                  </select>
+                  </div>
+                  <div class="flex flex-col">
+                  <label for="test">{{localize "l5r4ec.schools.school"}}</label>
                   <input class="{{data.clan}}-inputs" type="text" name="data.school" value="{{data.school}}">
+                  </div>
                </div>
-            </div>
-               
-            </div>
+               <div class="flex align-center  " id="clan-images">
+                  <img  src="systems/l5r4ec/assets/icons/clans/{{data.clan}}.svg" alt="">
+
+               </div>  
+               </div> 
+               </div>
          </div>
          <div class="flex flex-col align-center w-80px justify-center">
             <h1 class="flex flex-col ">
@@ -140,6 +155,8 @@
       </div>
    </div>
 </div>
+
+
 
 
 
@@ -303,7 +320,7 @@
                      src="/systems/l5r4ec/assets/icons/rings/kanji_void.svg"
                      alt=""
                      class="text-earth absolute left-24 top-125 no-borders"
-                     height="80"void
+                     height="80"
                      width="80"
                   />
                   <div id="ring-inputs-void">
@@ -416,6 +433,93 @@
 <div class="separator"></div>
 
 
+<div class="char_tabs">
+    <div class="char_tab" data-tab="char_tab1">Combat</div>
+    <div class="char_tab" data-tab="char_tab2">Sorts</div>
+    <div class="char_tab" data-tab="char_tab3">Compétences</div>
+    <div class="char_tab" data-tab="char_tab4">Inventaire</div>
+     <div class="char_tab" data-tab="char_tab5">Effets</div>
+</div>
+
+<div id="char_tab1" class="char_tab-content ">
+    Combat
+
+    <div class="flex">
+      <!-- search in items all the items with the weapon type-->
+      {{#each items as |item|}}
+         {{#if (eq item.type "weapon")}}
+            <div class="flex flex-col">
+               <div class="flex flex-col">
+                  <label for="data.items.{{@index}}.name">{{item.name}}</label>
+                  <input
+                     class="select-on-focus"
+                     type="text"
+                     name="data.items.{{@index}}.name"
+                     value="{{item.name}}"
+                     data-type="String"
+                     placeholder="name"
+                  />
+               </div>
+
+               <div class="flex flex-col">
+                  <label for="data.items.{{@index}}.description">{{item.system.description}}</label>
+                  <input
+                     class="select-on-focus"
+                     type="text"
+                     name="data.items.{{@index}}.description"
+                     value="{{item.system.description}}"
+                     data-type="String"
+                     placeholder="description"
+                  />
+               </div>
+            </div>
+         {{/if}}
+      {{/each}}
+    </div>
+</div>
+<div id="char_tab2" class="char_tab-content" style="display:none;">
+    Sorts
+</div>
+<div id="char_tab3" class="char_tab-content" style="display:none;">
+    Compétences
+</div>
+<div id="char_tab4" class="char_tab-content" style="display:none;">
+   <table>
+         <th>
+            Items :
+         </th>
+
+        
+         {{#each items as |item|}}
+            <tr>
+               <td>
+                  <input
+                     class="select-on-focus"
+                     type="text"
+                     name="data.items.{{@index}}.name"
+                     value="{{item.name}}"
+                     data-type="String"
+                     placeholder="name"
+                  />
+               </td>
+
+               <td>
+                  <input
+                     class="select-on-focus"
+                     type="text"
+                     name="data.items.{{@index}}.description"
+                     value="{{item.system.description}}"
+                     data-type="String"
+                     placeholder="description"
+                  />
+               </td>
+            </tr>
+         {{/each}}
+      </table> 
+</div>
+<div id="char_tab5" class="char_tab-content" style="display:none;">
+   Effets
+</div>
 
 
 
