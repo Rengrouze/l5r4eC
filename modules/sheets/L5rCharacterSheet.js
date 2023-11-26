@@ -95,7 +95,7 @@ export default class L5rCharacterSheet extends ActorSheet {
          insight.rank = 7;
       } else {
          // Calculer le rang supplémentaire pour chaque tranche de 25 points au-dessus de 300
-         const additionalRanks = Math.floor((reputation - 300) / 25);
+         const additionalRanks = Math.floor((insight.points - 300) / 25);
          insight.rank = 8 + additionalRanks;
       }
    }
@@ -116,29 +116,50 @@ export default class L5rCharacterSheet extends ActorSheet {
       const statValue = event.currentTarget.dataset.value;
 
       let rollResult; // Déclarer rollResult en dehors des conditions
+      let roll; // Déclarer roll ici
+      let surplus; // Déclarer surplus ici
       let keep; // Déclarer keep ici
+
+      const skillType = event.currentTarget.dataset.skillType;
+      let skill = event.currentTarget.dataset.skill;
 
       if (rollType === "trait") {
          // Recherche du niveau de trait dans les données
          const traitLevel = parseInt(statValue); // Assurez-vous de convertir en nombre
 
          // Définir les valeurs de jet et de conservation
-         let roll = traitLevel;
+         roll = traitLevel;
          keep = traitLevel; // Définir keep ici
 
          // Effectuer le jet de dés
          rollResult = await this._rollDice(roll, keep);
       } else if (rollType === "ring") {
          const ringLevel = this.actor.system.rings[stat]; // Utiliser 'rings' au lieu de 'ring'
-         let roll = ringLevel;
+         roll = ringLevel;
          keep = ringLevel; // Définir keep ici
 
          // Effectuer le jet de dés
          rollResult = await this._rollDice(roll, keep);
       } else if (rollType === "skill") {
-         const skillLevel = this.actor.system.skills[stat];
+         // case of skillType = high, bugei, low, merchant, weapon
+         var skillPath;
+         if (skillType === "high") {
+            skillPath = this.actor.system.skills.high;
+         } else if (skillType === "bugei") {
+            skillPath = this.actor.system.skills.bugei;
+         } else if (skillType === "low") {
+            skillPath = this.actor.system.skills.low;
+         } else if (skillType === "merchant") {
+            skillPath = this.actor.system.skills.merchant;
+         } else if (skillType === "weapon") {
+            skillPath = this.actor.system.skills.weapon;
+         } else {
+            console.error("Le type de compétence n'est pas défini comme prévu.");
+         }
+
+         const skillLevel = skillPath[skill];
          const traitLevel = 5;
-         let roll = skillLevel + traitLevel;
+         roll = skillLevel + traitLevel;
 
          if (roll > 10) {
             surplus = roll - 10;
@@ -147,6 +168,7 @@ export default class L5rCharacterSheet extends ActorSheet {
          }
 
          // Effectuer le jet de dés
+
          rollResult = await this._rollDice(roll, keep); // Ajouter 'keep' ici
       } else {
          // Si le type de jet de dés n'est pas défini comme prévu
@@ -154,10 +176,12 @@ export default class L5rCharacterSheet extends ActorSheet {
       }
 
       // Afficher le résultat du jet dans la console
-      console.log("Roll Result:", rollResult);
+
+      const characterName = this.actor.name;
+      await new Promise((r) => setTimeout(r, 4000));
 
       // Afficher le résultat du jet dans l'interface utilisateur
-      this._displayRollResult(stat, rollResult, keep);
+      this._displayRollResult(characterName, stat, rollResult, roll, keep);
    }
 
    async _rollDice(roll, keep) {
@@ -170,6 +194,7 @@ export default class L5rCharacterSheet extends ActorSheet {
       const rollFormula = `${roll}d10kh${keep}`;
 
       const rollResult = await new Roll(rollFormula).evaluate({ async: true });
+      game.dice3d.showForRoll(rollResult, game.user, true); // Affiche les dés dans Dice So Nice
 
       // Initialise la liste des résultats formatés
       const formattedResults = [];
@@ -181,7 +206,11 @@ export default class L5rCharacterSheet extends ActorSheet {
          if (result.result === 10) {
             // Relance le dé de 10 jusqu'à ce qu'il n'explose plus
             do {
+               // wait 4 seconds
+               await new Promise((r) => setTimeout(r, 1000));
+
                const additionalRoll = await new Roll("1d10").evaluate({ async: true });
+               game.dice3d.showForRoll(additionalRoll, game.user, true);
                if (additionalRoll && additionalRoll.dice && additionalRoll.dice.length > 0) {
                   const additionalResult = additionalRoll.total;
 
@@ -200,6 +229,7 @@ export default class L5rCharacterSheet extends ActorSheet {
 
          // Ajoute le résultat dans la liste
          formattedResults.push(displayResult);
+         // Émet un événement pour que Dice So Nice puisse afficher les résultats
       }
 
       // Calcule la somme totale
@@ -211,19 +241,18 @@ export default class L5rCharacterSheet extends ActorSheet {
       };
    }
 
-   _displayRollResult(stat, rollResult, keep) {
+   _displayRollResult(name, stat, rollResult, roll, keep) {
+      //wait 4 seconds
+
       if (rollResult && rollResult.total && rollResult.diceResults && rollResult.diceResults.length > 0) {
          const diceResults = rollResult.diceResults;
-         const explodeCount = diceResults.filter((result) => result.result === 10).length;
+
          const detailedResults = this._formatDetailedResults(diceResults, rollResult.exploded || []);
 
-         const messageContent = `<b>Résultat du jet de dés pour ${stat} :</b><br>
-            Dés lancés : ${rollResult.diceResults.length}<br>
-            Dés gardés : ${keep}<br>
-            Total : ${rollResult.total}<br>
-            Dés explosés : ${explodeCount}<br>
-            Résultats détaillés : ${detailedResults}`;
-
+         const messageContent = `<h3>${name} lance un jet de ${stat}</h3>
+            ${roll}k${keep}<br>
+            Résultats détaillés : ${detailedResults}
+            <h3>Total : ${rollResult.total}</h3>`;
          const chatData = {
             type: CONST.CHAT_MESSAGE_TYPES.ROLL,
 

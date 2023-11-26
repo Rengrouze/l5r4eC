@@ -38,7 +38,13 @@ body {
 }
 
 /* text colors */
-/* Rings */
+/* Rings 
+$water-ring: #5f919b;
+$earth-ring: #699678;
+$fire-ring: #9b7350;
+$air-ring: #917896;
+$void-ring: #4b4641;
+*/
 /* clan colors */
 /* whit backgrounds */
 .no-borders {
@@ -50,9 +56,9 @@ body {
 }
 
 #ring-inputs-earth input {
-  border: 3px solid #699678 !important;
+  border: 3px solid #5c9c72 !important;
   border-radius: 100% !important;
-  color: #699678 !important;
+  color: #5c9c72 !important;
   outline: none !important;
   position: absolute !important;
   background-color: white !important;
@@ -67,10 +73,10 @@ body {
 }
 
 #ring-inputs-air input {
-  border: 3px solid #917896 !important;
+  border: 3px solid #9e6ea8 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #917896 !important;
+  color: #9e6ea8 !important;
   outline: none !important;
   position: absolute !important;
   width: 38px !important;
@@ -84,10 +90,10 @@ body {
 }
 
 #ring-inputs-water input {
-  border: 3px solid #5f919b !important;
+  border: 3px solid #67a9b6 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #5f919b !important;
+  color: #67a9b6 !important;
   outline: none !important;
   position: absolute !important;
   width: 38px !important;
@@ -101,10 +107,10 @@ body {
 }
 
 #ring-inputs-fire input {
-  border: 3px solid #9b7350 !important;
+  border: 3px solid #bd8350 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #9b7350 !important;
+  color: #bd8350 !important;
   outline: none !important;
   position: absolute !important;
   width: 38px !important;
@@ -118,10 +124,10 @@ body {
 }
 
 #ring-inputs-void input {
-  border: 3px solid #4b4641 !important;
+  border: 3px solid #2c2b27 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #4b4641 !important;
+  color: #2c2b27 !important;
   outline: none !important;
   position: absolute !important;
   width: 38px !important;
@@ -134,10 +140,10 @@ body {
 }
 
 #traits-inputs-earth input {
-  border: 3px solid #699678 !important;
+  border: 3px solid #5c9c72 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #699678 !important;
+  color: #5c9c72 !important;
   outline: none !important;
   width: 38px !important;
   height: 38px !important;
@@ -146,10 +152,10 @@ body {
 }
 
 #traits-inputs-water input {
-  border: 3px solid #5f919b !important;
+  border: 3px solid #67a9b6 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #5f919b !important;
+  color: #67a9b6 !important;
   outline: none !important;
   width: 38px !important;
   height: 38px !important;
@@ -158,10 +164,10 @@ body {
 }
 
 #traits-inputs-air input {
-  border: 3px solid #917896 !important;
+  border: 3px solid #9e6ea8 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #917896 !important;
+  color: #9e6ea8 !important;
   outline: none !important;
   width: 38px !important;
   height: 38px !important;
@@ -170,10 +176,10 @@ body {
 }
 
 #traits-inputs-fire input {
-  border: 3px solid #9b7350 !important;
+  border: 3px solid #bd8350 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #9b7350 !important;
+  color: #bd8350 !important;
   outline: none !important;
   width: 38px !important;
   height: 38px !important;
@@ -182,10 +188,10 @@ body {
 }
 
 #traits-inputs-void input {
-  border: 3px solid #4b4641 !important;
+  border: 3px solid #2c2b27 !important;
   border-radius: 100% !important;
   background-color: white !important;
-  color: #4b4641 !important;
+  color: #2c2b27 !important;
   outline: none !important;
   width: 38px !important;
   height: 38px !important;
@@ -217,7 +223,7 @@ body {
 .lion-inputs {
   background-color: white !important;
   color: black !important;
-  border: 3px solid #d9c23e !important;
+  border: 3px solid #af9e3a !important;
   border-radius: 10px !important;
 }
 
@@ -291,7 +297,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 0;
-  border: 3px solid #4b4641;
+  border: 3px solid #2c2b27;
   background-color: white;
   text-align: center;
   min-width: 60px;
@@ -440,23 +446,23 @@ body {
 }
 
 .text-water {
-  color: #5f919b;
+  color: #67a9b6;
 }
 
 .text-fire {
-  color: #9b7350;
+  color: #bd8350;
 }
 
 .text-earth {
-  color: #699678;
+  color: #5c9c72;
 }
 
 .text-air {
-  color: #917896;
+  color: #9e6ea8;
 }
 
 .text-void {
-  color: #4b4641;
+  color: #2c2b27;
 }
 
 .m0 {
@@ -11385,6 +11391,10 @@ body {
   width: 140px;
 }
 
+.w-160px {
+  width: 160px;
+}
+
 .h-100px {
   height: 100px;
 }
@@ -11400,7 +11410,7 @@ body {
 #earth-stats-table {
   display: inline-block;
   width: 100%;
-  border: 3px solid #699678;
+  border: 3px solid #5c9c72;
   border-radius: 10%;
   padding-left: 2px;
   padding-right: 2px;
@@ -11409,7 +11419,7 @@ body {
 #water-stats-table {
   display: inline-block;
   width: 100%;
-  border: 3px solid #5f919b;
+  border: 3px solid #67a9b6;
   border-radius: 10%;
   padding-left: 2px;
   padding-right: 2px;
@@ -11418,7 +11428,7 @@ body {
 #fire-stats-table {
   display: inline-block;
   width: 100%;
-  border: 3px solid #9b7350;
+  border: 3px solid #bd8350;
   border-radius: 10%;
   padding-left: 2px;
   padding-right: 2px;
@@ -11427,7 +11437,7 @@ body {
 #air-stats-table {
   display: inline-block;
   width: 100%;
-  border: 3px solid #917896;
+  border: 3px solid #9e6ea8;
   border-radius: 10%;
   padding-left: 2px;
   padding-right: 2px;
@@ -11436,7 +11446,7 @@ body {
 #void-stats-table {
   display: inline-block;
   width: 100%;
-  border: 3px solid #4b4641;
+  border: 3px solid #2c2b27;
   border-radius: 10%;
   padding-left: 2px;
   padding-right: 2px;

@@ -65,7 +65,7 @@
    <div class="separator"></div>
 
    <div class="mb-100 flex flex-row justify-between">
-      <div class="flex flex-col w-140px">
+      <div class="flex flex-col w-160px">
          <div class="flex flex-col mb-20" id="earth-stats-table">
             <div class="flex rings-traits w-full justify-around mt-5">
                <h2 class="text-earth rings-traits no-borders m0">{{localize "l5r4ec.rings.earth"}}</h2>
@@ -79,7 +79,7 @@
             </div>
             <div class="flex justify-between w-full align-center my-5 px-4">
 
-                  <button class="roll-dice mr-3 w-100" data-name="stamina" data-value="{{data.traits.stamina}}" data-roll-type="trait">{{localize "l5r4ec.traits.stamina"}}</button>
+                  <button id="traits-button" class="roll-dice mr-3 w-100" data-name="stamina" data-value="{{data.traits.stamina}}" data-roll-type="trait">{{localize "l5r4ec.traits.stamina"}}</button>
 
                <div id="traits-inputs-earth">
                      <input
@@ -194,7 +194,7 @@
          </table> -->
       </div>
 
-      <div id="rings-section" class="flex flex-col text-xl bold justify-center align-center"><ul class="p-0">
+   <div id="rings-section" class="flex flex-col text-xl bold justify-center align-center"><ul class="p-0">
             <li class="flex flex-row w-full justify-center align-center">
                <div id="earth-ring-section" class="relative">
                   <img
@@ -337,7 +337,7 @@
 
             </li>
          </ul></div>
-      <div class="flex flex-col w-140px">
+   <div class="flex flex-col  w-160px">
          <div class="flex flex-col mb-20" id="air-stats-table">
             <div class="flex rings-traits w-full justify-around mt-5">
               <h2 class="text-air rings-traits no-borders m0">{{localize "l5r4ec.rings.air"}}</h2>
@@ -481,41 +481,169 @@
     Sorts
 </div>
 <div id="char_tab3" class="char_tab-content" style="display:none;">
-    Compétences
-
-   <div>
-      high skills
-      <!-- for each skill in high skill display the rank of the skill, the name of the skill, the stat used and a button to roll-->
-      {{#each data.skills.high as |skill|}}
-         <div class="flex flex-row">
-            <div class="flex flex-col">
-               
+   <!-- Ajout d'un tableau pour contenir les données -->
+<!-- Ajout d'un tableau pour contenir les données -->
+<!-- Ajout d'un tableau pour contenir les données -->
+<table>
+   <thead>
+      <tr>
+         
+         <h3>{{localize "l5r4ec.skills.highs"}}</h3>
+      </tr>
+   </thead>
+   <tbody>
+      {{#each data.skills.high as |value key|}}
+         <tr>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <button class="roll-dice mr-3" data-skill-type="high" data-roll-type="skill" data-skill={{key}} data-stat="stamina" >{{localize (concat "l5r4ec.skills.high." key)}}</button>
+            </td>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
                <input
-                  class="select-on-focus"
-                  type="text"
-                  name="data.skills.high.{{@index}}"
-                  value="{{skill}}"
-                  data-type="String"
-                  placeholder="name"
+                  type="number"
+                  name="data.skills.high.{{key}}"
+                  value="{{value}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
                />
-            </div>
-
-            <div class="flex flex-col">
-               <p for="data.skills.high.{{@index}}">{{localize "l5r4ec.skills.high.{{skill}}"}}</p>
-              
-            </div>
-
-            <div class="flex flex-col">
-              <!-- make a select with all the traits and rings-->
-              
-            </div>
-
-            <div class="flex flex-col">
-               <button class="roll-dice mr-3" data-roll-type="skill">{{skill}}</button>
-            </div>
-         </div>
+            </td>
+         </tr>
       {{/each}}
-   </div>
+     
+
+   </tbody>
+</table>
+<table>
+   <thead>
+      <tr>
+         
+         <h3>{{localize "l5r4ec.skills.bugeis"}}</h3>
+      </tr>
+   </thead>
+   <tbody>
+      {{#each data.skills.bugei as |value key|}}
+         <tr>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <button class="roll-dice mr-3" data-roll-type="skill" data-skill={{key}} data-stat="stamina">{{localize (concat "l5r4ec.skills.bugei." key)}}</button>
+               
+            </td>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <input
+                  type="number"
+                  name="data.skills.bugei.{{key}}"
+                  value="{{value}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+         </tr>
+      {{/each}}
+     
+
+   </tbody>
+</table>
+<table>
+   <thead>
+      <tr>
+         
+         <h3>{{localize "l5r4ec.skills.weapons"}}</h3>
+      </tr>
+   </thead>
+   <tbody>
+      {{#each data.skills.weapon as |value key|}}
+         <tr>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <button class="roll-dice mr-3" data-roll-type="skill">{{localize (concat "l5r4ec.skills.weaponSkill." key)}}</button>
+            </td>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <input
+                  type="number"
+                  name="data.skills.weapon.{{key}}"
+                  value="{{value}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+         </tr>
+      {{/each}}
+     
+
+   </tbody>
+</table>
+<table>
+   <thead>
+      <tr>
+         
+         <h3>{{localize "l5r4ec.skills.merchants"}}</h3>
+      </tr>
+   </thead>
+   <tbody>
+      {{#each data.skills.merchant as |value key|}}
+         <tr>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <button class="roll-dice mr-3" data-roll-type="skill">{{localize (concat "l5r4ec.skills.merchant." key)}}</button>
+            </td>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <input
+                  type="number"
+                  name="data.skills.merchant.{{key}}"
+                  value="{{value}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+         </tr>
+      {{/each}}
+     
+
+   </tbody>
+</table>
+<table>
+   <thead>
+      <tr>
+         
+         <h3>{{localize "l5r4ec.skills.lows"}}</h3>
+      </tr>
+   </thead>
+   <tbody>
+      {{#each data.skills.low as |value key|}}
+         <tr>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <button class="roll-dice mr-3" data-roll-type="skill">{{localize (concat "l5r4ec.skills.low." key)}}</button>
+            </td>
+            <td>
+               <!-- Utilisation de {{key}} pour accéder à la clé (nom de la compétence) -->
+               <input
+                  type="number"
+                  name="data.skills.low.{{key}}"
+                  value="{{value}}"
+                  data-type="Number"
+                  min="0"
+                  placeholder="0"
+               />
+            </td>
+         </tr>
+      {{/each}}
+     
+
+   </tbody>
+</table>
+
+
+
+   
 
 </div>
 <div id="char_tab4" class="char_tab-content" style="display:none;">

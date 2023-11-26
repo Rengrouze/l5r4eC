@@ -6,16 +6,17 @@
          "damageKeep": "Dés gardés"
       },
       "skills": {
+         "highs": "Compétences nobles",
          "high": {
             "acting": "Comédie",
-            "artisan": "Artisanat",
+            "artisan": "Art",
             "calligraphy": "Calligraphie",
             "courtier": "Courtisan",
             "divination": "Divination",
             "etiquette": "Etiquette",
             "games": "Jeux",
             "investigation": "Enquête",
-            "lore": "Connaissances",
+            "lore": "Connaissance",
             "medicine": "Médecine",
             "meditation": "Méditation",
             "perform": "Spectacle",
@@ -23,10 +24,46 @@
             "spellcraft": "Art de la magie",
             "tea": "Cérémonie du thé"
          },
+         "bugeis": "Compétences de Bugei",
+         "bugei": {
+            "athletics": "Athlétisme",
+            "battle": "Art de la guerre",
+            "defense": "Défense",
+            "horsemanship": "Equitation",
+            "hunting": "Chasse",
+            "iaijutsu": "Iaijutsu",
+            "jiujutsu": "Jiujutsu"
+         },
+         "weapons": "Compétences d'armes",
          "weaponSkill": {
+            "cannon": "Canon",
+            "chain": "Armes à chaînes",
+            "firearms": "Armes à feu",
+            "heavy": "Armes lourdes",
             "kenjutsu": "Kenjutsu",
-            "jiujitsu": "Jiujitsu",
-            "heavy-weapons": "Armes lourdes"
+            "knives": "Couteaux",
+            "kyujutsu": "Kyujutsu",
+            "ninjutsu": "Ninjutsu",
+            "polearms": "Armes d'hast",
+            "spears": "Lances",
+            "staves": "Bâtons",
+            "warfans": "Eventails de guerre"
+         },
+         "merchants": "Compétences de Marchand",
+         "merchant": {
+            "animalHandling": "Elevage",
+            "commerce": "Commerce",
+            "craft": "Artisanat",
+            "engineering": "Ingénierie",
+            "sailing": "Navigation"
+         },
+         "lows": "Compétences dégradantes",
+         "low": {
+            "forgery": "Contrefaçon",
+            "intimidation": "Intimidation",
+            "sleightOfHand": "Passes-passe",
+            "stealth": "Discrétion",
+            "temptation": "Tentation"
          }
       },
       "rings": {

@@ -6,6 +6,7 @@
          "damageKeep": "Keeped dice"
       },
       "skills": {
+         "highs": "Noble Skills",
          "high": {
             "acting": "Acting",
             "artisan": "Artisan",
@@ -23,10 +24,46 @@
             "spellcraft": "Spellcraft",
             "tea": "Tea"
          },
+         "bugeis": "Bugei Skills",
+         "bugei": {
+            "athletics": "Athletics",
+            "battle": "Battle",
+            "defense": "Defense",
+            "horsemanship": "Horsemanship",
+            "hunting": "Hunting",
+            "iaijutsu": "Iaijutsu",
+            "jiujutsu": "Jiujutsu"
+         },
+         "weapons": "Weapons Skills",
          "weaponSkill": {
+            "cannon": "Cannon",
+            "chain": "Chain",
+            "firearms": "Firearms",
+            "heavy": "Heavy",
             "kenjutsu": "Kenjutsu",
-            "jiujitsu": "Jiujitsu",
-            "heavy-weapons": "Heavy weapons"
+            "knives": "Knives",
+            "kyujutsu": "Kyujutsu",
+            "ninjutsu": "Ninjutsu",
+            "polearms": "Polearms",
+            "spears": "Spears",
+            "staves": "Staves",
+            "warfans": "Warfans"
+         },
+         "merchants": "Merchants Skills",
+         "merchant": {
+            "animalHandling": "Animal Handling",
+            "commerce": "Commerce",
+            "craft": "Craft",
+            "engineering": "Engineering",
+            "sailing": "Sailing"
+         },
+         "lows": "Low Skills",
+         "low": {
+            "forgery": "Forgery",
+            "intimidation": "Intimidation",
+            "sleightOfHand": "Sleight of Hand",
+            "stealth": "Stealth",
+            "temptation": "Temptation"
          }
       },
       "rings": {
