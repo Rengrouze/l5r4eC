@@ -11369,8 +11369,8 @@ body {
   width: 80px;
 }
 
-.w-full {
-  width: 100%;
+.w-100px {
+  width: 100px;
 }
 
 .w-150px {

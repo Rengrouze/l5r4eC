@@ -6,6 +6,23 @@
          "damageKeep": "Dés gardés"
       },
       "skills": {
+         "high": {
+            "acting": "Comédie",
+            "artisan": "Artisanat",
+            "calligraphy": "Calligraphie",
+            "courtier": "Courtisan",
+            "divination": "Divination",
+            "etiquette": "Etiquette",
+            "games": "Jeux",
+            "investigation": "Enquête",
+            "lore": "Connaissances",
+            "medicine": "Médecine",
+            "meditation": "Méditation",
+            "perform": "Spectacle",
+            "sincerity": "Sincérité",
+            "spellcraft": "Art de la magie",
+            "tea": "Cérémonie du thé"
+         },
          "weaponSkill": {
             "kenjutsu": "Kenjutsu",
             "jiujitsu": "Jiujitsu",

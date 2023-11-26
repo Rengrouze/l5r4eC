@@ -6,6 +6,23 @@
          "damageKeep": "Keeped dice"
       },
       "skills": {
+         "high": {
+            "acting": "Acting",
+            "artisan": "Artisan",
+            "calligraphy": "Calligraphy",
+            "courtier": "Courtier",
+            "divination": "Divination",
+            "etiquette": "Etiquette",
+            "games": "Games",
+            "investigation": "Investigation",
+            "lore": "Lore",
+            "medicine": "Medicine",
+            "meditation": "Meditation",
+            "perform": "Perform",
+            "sincerity": "Sincerity",
+            "spellcraft": "Spellcraft",
+            "tea": "Tea"
+         },
          "weaponSkill": {
             "kenjutsu": "Kenjutsu",
             "jiujitsu": "Jiujitsu",
