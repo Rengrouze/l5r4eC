@@ -1,5 +1,7 @@
 # Système de jeu pour VTT foundry du jeu de rôle "La légende des 5 anneaux" (L5R) pour la 4e édition.
 
+## Système toujours en cours de développement.
+
 ## Description
 
 Bonjour ! je suis un joueur de la 4ème édition de L5R et afin de profiter du système de VTT foundry j'ai décidé de créer un système adapté à ce jeu de rôle.
